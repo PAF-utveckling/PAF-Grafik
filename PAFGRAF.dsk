@@ -16,8 +16,8 @@ File_13=TSourceModule,'c:\program files (x86)\embarcadero\studio\15.0\source\rtl
 
 [Modules]
 Module0=F:\Onedrive\Fyslab\Programvara\PAFgrafik\MainNew.pas
-Module1=F:\Onedrive\Fyslab\Programvara\PAFgrafik\Data.pas
-Module2=default.htm
+Module1=default.htm
+Module2=F:\Onedrive\Fyslab\Programvara\PAFgrafik\Data.pas
 Count=3
 EditWindowCount=1
 
@@ -26,21 +26,20 @@ ModuleType=TSourceModule
 FormState=1
 FormOnTop=0
 
+[default.htm]
+ModuleType=TURLModule
+
 [F:\Onedrive\Fyslab\Programvara\PAFgrafik\Data.pas]
 ModuleType=TSourceModule
 FormState=1
 FormOnTop=0
 
-[default.htm]
-ModuleType=TURLModule
-
 [EditWindow0]
-ViewCount=4
+ViewCount=3
 CurrentEditView=F:\Onedrive\Fyslab\Programvara\PAFgrafik\MainNew.pas
 View0=0
 View1=1
 View2=2
-View3=3
 PercentageSizes=1
 Create=1
 Visible=1
@@ -86,9 +85,6 @@ Bookmarks=
 EditViewName=Borland.FileHistoryView
 
 [View2]
-CustomEditViewType=TOTACustomEditView
-
-[View3]
 CustomEditViewType=TEditView
 Module=F:\Onedrive\Fyslab\Programvara\PAFgrafik\Data.pas
 CursorX=1
@@ -159,14 +155,14 @@ Create=1
 Visible=1
 Docked=0
 State=2
-Left=145
-Top=271
-Width=8930
-Height=8521
+Left=12
+Top=0
+Width=3992
+Height=5200
 MaxLeft=-4
 MaxTop=-7
-MaxWidth=8930
-MaxHeight=8521
+MaxWidth=3992
+MaxHeight=5200
 ClientWidth=10000
 ClientHeight=9836
 BottomPanelSize=9188
@@ -736,7 +732,7 @@ TabDockClients=StructureView,ClassBrowserTool
 DockSiteType=1
 PercentageSizes=1
 Create=1
-Visible=0
+Visible=1
 Docked=0
 State=0
 Left=10008
