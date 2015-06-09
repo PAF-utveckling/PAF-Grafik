@@ -1,45 +1,39 @@
 ﻿[Closed Files]
-File_0=TSourceModule,'C:\Program Files (x86)\Embarcadero\Studio\15.0\source\rtl\sys\System.pas',0,1,1,75,40,0,0,,
-File_1=TSourceModule,'F:\Onedrive\Fyslab\Programvara\PAFgrafik\Data.dfm',0,1,1,1,1,0,0,,
-File_2=TSourceModule,'D:\FysStat2015\Niklas Statistik\FrånPAF\BESOKRP2014.TXT',0,1,9903,17,9928,0,0,,
-File_3=TSourceModule,'U:\FysStat2015\Niklas Statistik\FrånPAF\FAKTRP1.TXT',0,1,2736,1,1,0,0,,
-File_4=TSourceModule,'U:\FysStat2015\Niklas Statistik\FrånPAF\BESOKRP1.TXT',0,1,1,1,2,0,0,,
-File_5=TSourceModule,'F:\Mina dokument\Niklas\_Viktigare filer\Fyslabosorterad\Programutveckling\fakturering\program\main.dfm',0,1,1,1,1,0,0,,
-File_6=TSourceModule,'c:\program files (x86)\embarcadero\studio\15.0\SOURCE\RTL\SYS\System.Variants.pas',0,1,1062,68,1093,0,0,,
-File_7=TTogetherDocModule,'F:\Onedrive\Fyslab\Programvara\PAFgrafik\ModelSupport_PAFGRAF\Data\default.txaPackage',0
-File_8=TSourceModule,'c:\program files (x86)\embarcadero\studio\15.0\SOURCE\RTL\SYS\System.SysUtils.pas',0,1,1,10,5,0,0,,
-File_9=TSourceModule,'F:\Mina dokument\Niklas\tmssoftware\TMS Component Pack\advgrid.pas',0,1,1,1,1,0,0,,
-File_10=TSourceModule,'c:\program files (x86)\embarcadero\studio\15.0\SOURCE\VCL\Vcl.Controls.pas',0,1,2906,1,2937,0,0,,
-File_11=TSourceModule,'c:\program files (x86)\embarcadero\studio\15.0\SOURCE\VCL\Vcl.CheckLst.pas',0,1,54,43,85,0,0,,
-File_12=TSourceModule,'c:\program files (x86)\embarcadero\studio\15.0\SOURCE\VCL\Vcl.StdCtrls.pas',0,1,1026,1,1057,0,0,{{1650,4}
-File_13=TSourceModule,'c:\program files (x86)\embarcadero\studio\15.0\source\rtl\common\System.Classes.pas',0,1,3414,1,3443,0,0,,
+File_0=TSourceModule,'U:\Programvara\PAFgrafik\.gitignore.txt',0,1,1,1,1,0,0,,
+File_1=TSourceModule,'U:\Programvara\PAFgrafik\Licence.txt',0,1,1,1,4,0,0,,
+File_2=TSourceModule,'C:\Program Files (x86)\Embarcadero\Studio\15.0\source\rtl\sys\System.pas',0,1,1,75,40,0,0,,
+File_3=TSourceModule,'F:\Onedrive\Fyslab\Programvara\PAFgrafik\Data.dfm',0,1,1,1,1,0,0,,
+File_4=TSourceModule,'D:\FysStat2015\Niklas Statistik\FrånPAF\BESOKRP2014.TXT',0,1,9903,17,9928,0,0,,
+File_5=TSourceModule,'U:\FysStat2015\Niklas Statistik\FrånPAF\FAKTRP1.TXT',0,1,2736,1,1,0,0,,
+File_6=TSourceModule,'U:\FysStat2015\Niklas Statistik\FrånPAF\BESOKRP1.TXT',0,1,1,1,2,0,0,,
+File_7=TSourceModule,'F:\Mina dokument\Niklas\_Viktigare filer\Fyslabosorterad\Programutveckling\fakturering\program\main.dfm',0,1,1,1,1,0,0,,
+File_8=TSourceModule,'c:\program files (x86)\embarcadero\studio\15.0\SOURCE\RTL\SYS\System.Variants.pas',0,1,1062,68,1093,0,0,,
+File_9=TTogetherDocModule,'F:\Onedrive\Fyslab\Programvara\PAFgrafik\ModelSupport_PAFGRAF\Data\default.txaPackage',0
+File_10=TSourceModule,'c:\program files (x86)\embarcadero\studio\15.0\SOURCE\RTL\SYS\System.SysUtils.pas',0,1,1,10,5,0,0,,
+File_11=TSourceModule,'F:\Mina dokument\Niklas\tmssoftware\TMS Component Pack\advgrid.pas',0,1,1,1,1,0,0,,
+File_12=TSourceModule,'c:\program files (x86)\embarcadero\studio\15.0\SOURCE\VCL\Vcl.Controls.pas',0,1,2906,1,2937,0,0,,
+File_13=TSourceModule,'c:\program files (x86)\embarcadero\studio\15.0\SOURCE\VCL\Vcl.CheckLst.pas',0,1,54,43,85,0,0,,
+File_14=TSourceModule,'c:\program files (x86)\embarcadero\studio\15.0\SOURCE\VCL\Vcl.StdCtrls.pas',0,1,1026,1,1057,0,0,{{1650,4}
 
 [Modules]
-Module0=F:\Onedrive\Fyslab\Programvara\PAFgrafik\MainNew.pas
+Module0=U:\Programvara\PAFgrafik\Data.pas
 Module1=default.htm
-Module2=F:\Onedrive\Fyslab\Programvara\PAFgrafik\Data.pas
-Count=3
+Count=2
 EditWindowCount=1
 
-[F:\Onedrive\Fyslab\Programvara\PAFgrafik\MainNew.pas]
+[U:\Programvara\PAFgrafik\Data.pas]
 ModuleType=TSourceModule
 FormState=1
-FormOnTop=0
+FormOnTop=1
 
 [default.htm]
 ModuleType=TURLModule
 
-[F:\Onedrive\Fyslab\Programvara\PAFgrafik\Data.pas]
-ModuleType=TSourceModule
-FormState=1
-FormOnTop=0
-
 [EditWindow0]
-ViewCount=3
-CurrentEditView=F:\Onedrive\Fyslab\Programvara\PAFgrafik\MainNew.pas
+ViewCount=2
+CurrentEditView=U:\Programvara\PAFgrafik\Data.pas
 View0=0
 View1=1
-View2=2
 PercentageSizes=1
 Create=1
 Visible=1
@@ -75,25 +69,14 @@ WelcomePageURL=bds:/default.htm
 
 [View1]
 CustomEditViewType=TEditView
-Module=F:\Onedrive\Fyslab\Programvara\PAFgrafik\MainNew.pas
-CursorX=11
-CursorY=5
+Module=U:\Programvara\PAFgrafik\Data.pas
+CursorX=1
+CursorY=1
 TopLine=1
 LeftCol=1
 Elisions=
 Bookmarks=
-EditViewName=Borland.FileHistoryView
-
-[View2]
-CustomEditViewType=TEditView
-Module=F:\Onedrive\Fyslab\Programvara\PAFgrafik\Data.pas
-CursorX=1
-CursorY=240
-TopLine=237
-LeftCol=1
-Elisions=
-Bookmarks=
-EditViewName=Borland.FileHistoryView
+EditViewName=Borland.FormDesignerView
 
 [Watches]
 Count=11
@@ -155,14 +138,14 @@ Create=1
 Visible=1
 Docked=0
 State=2
-Left=12
-Top=0
-Width=3992
-Height=5200
+Left=145
+Top=271
+Width=8930
+Height=8521
 MaxLeft=-4
 MaxTop=-7
-MaxWidth=3992
-MaxHeight=5200
+MaxWidth=8930
+MaxHeight=8521
 ClientWidth=10000
 ClientHeight=9836
 BottomPanelSize=9188
@@ -245,6 +228,11 @@ LRDockWidth=1895
 Dockable=1
 StayOnTop=0
 SplitPos=111
+
+[PropInspDesignerSelection]
+ArrangeBy=Name
+SelectedItem=Action,
+ExpandedItems=Anchors=0,BorderIcons=0,Constraints=0,Font=0,GlassFrame=0,HorzScrollBar=0
 
 [ModelViewTool]
 PercentageSizes=1
