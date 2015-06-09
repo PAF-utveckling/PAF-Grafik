@@ -3,6 +3,7 @@ unit MainNew;
 { $ define debug}
 
 // Komment
+// komment 2
 interface
 
 uses

@@ -1,0 +1,171 @@
+unit Settings;
+
+interface
+
+uses
+  IniFiles,
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.MSSQL,
+  FireDAC.Phys.MSSQLDef, FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf,
+  FireDAC.DApt, Vcl.Grids, AdvObj, BaseGrid, AdvGrid, DBAdvGrid, Data.DB,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, AdvOfficePager, Vcl.StdCtrls,
+  Vcl.DBCtrls, AsgLinks, AdvSmoothButton, Vcl.CheckLst, Vcl.ExtCtrls;
+
+type
+  TFSettings = class(TForm)
+    PagerSettings: TAdvOfficePager;
+    AdvOfficePager11: TAdvOfficePage;
+    AdvOfficePager12: TAdvOfficePage;
+    AdvOfficePager13: TAdvOfficePage;
+    PafConnection: TFDConnection;
+    FDQuery1: TFDQuery;
+    DataSource1: TDataSource;
+    CheckEditLink1: TCheckEditLink;
+    clProdgrupp: TCheckListBox;
+    AdvSmoothButton1: TAdvSmoothButton;
+    FDQuery2: TFDQuery;
+    DataSource2: TDataSource;
+    DBGridRemGrupp: TDBAdvGrid;
+    Splitter1: TSplitter;
+    DBGRIDProdGrupp: TDBAdvGrid;
+    clRemGrupp: TCheckListBox;
+    procedure FormShow(Sender: TObject);
+    procedure AdvSmoothButton1Click(Sender: TObject);
+  private
+    { Private declarations }
+    procedure WriteToRegistry;
+    procedure ReadFromRegistry;
+  public
+    { Public declarations }
+  end;
+
+var
+  FSettings: TFSettings;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFSettings.AdvSmoothButton1Click(Sender: TObject);
+begin
+  WritetoRegistry;
+  Close
+end;
+
+procedure TFSettings.FormShow(Sender: TObject);
+var
+  i: Integer;
+begin
+  // Populera Produktgrupplistan från tabell
+  i := 1;
+  clProdgrupp.Items.Clear;
+  repeat
+    clProdgrupp.Items.Add(DBGRIDProdGrupp.Cells[1, i]);
+    inc(i)
+  until i >= DBGRIDProdGrupp.RowCount;
+  clProdgrupp.Invalidate;
+
+  // Populera Remissgrupplistan från tabell
+  i := 1;
+  clRemGrupp.Items.Clear;
+  repeat
+    clRemGrupp.Items.Add(DBGridRemGrupp.Cells[2, i]);
+    inc(i)
+  until i >= DBGridRemGrupp.RowCount;
+  clRemGrupp.Invalidate;
+
+  ReadFromRegistry
+end;
+
+procedure TFSettings.ReadFromRegistry;
+// Läs aktuella val från listboxar från ini-fil
+var
+  reg: TIniFile;
+  ind,i: Integer;
+  S: String;
+  B:Boolean;
+begin
+
+  reg := TIniFile.Create(ChangeFileExt(Application.ExeName, '.INI'));
+
+    // Läs produktgrupp från inifil
+  i:=0;
+  repeat
+    ind:=clProdgrupp.ItemIndex;
+    S:=clProdgrupp.Items[i];
+    B:=reg.ReadBool('ProduktListGrupp',S,true);
+
+    if B then
+      clProdgrupp.State[i]:=cbChecked
+    else
+      clProdgrupp.State[i]:=cbUnChecked;
+    inc(i)
+  until i >= clProdgrupp.Count -1;
+
+  // Läs remissgrupp
+  i:=0;
+  repeat
+    ind:=clRemGrupp.ItemIndex;
+    S:=clRemGrupp.Items[i];
+    B:=reg.ReadBool('RemListGrupp',S,true);
+
+    if B then
+      clRemGrupp.State[i]:=cbChecked
+    else
+      clRemGrupp.State[i]:=cbUnChecked;
+    inc(i)
+  until i >= clRemGrupp.Count -1;
+
+  reg.Free;
+end;
+
+procedure TFSettings.WriteToRegistry;
+// Skriv aktuella val i listboxar till inifil
+var
+  reg: TIniFile;
+  ind,i: Integer;
+  S: String;
+  B:Boolean;
+begin
+
+  // produktgrupp till ini-fil
+  reg := TIniFile.Create(ChangeFileExt(Application.ExeName, '.INI'));
+
+  i:=0;
+  while i <  clProdgrupp.Count do
+  begin
+    S:=clProdgrupp.Items[i];
+
+    if clProdgrupp.State[i] = cbChecked then
+      B:=true
+    else
+      B:=False;
+
+    reg.WriteBool('ProduktListGrupp',S,B);
+    inc(i)
+  end;
+
+ // until i >= clProdgrupp.Count -1;
+
+  // remissgrupp till ini-fil
+  i:=0;
+  while i < clRemGrupp.Count do
+  begin
+     S:=clRemGrupp.Items[i];
+
+    if clRemGrupp.State[i] = cbChecked then
+      B:=true
+    else
+      B:=False;
+
+    reg.WriteBool('RemListGrupp',S,B);
+    inc(i)
+  end;
+
+  reg.Free;
+end;
+
+end.

@@ -1,0 +1,33 @@
+unit DatumSelect;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, AdvSmoothEdit,
+  AdvSmoothEditButton, AdvSmoothDatePicker;
+
+type
+  TDatumForm = class(TForm)
+    DatePicker: TAdvSmoothDatePicker;
+    procedure DatePickerChange(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    Datum: TDate;
+  end;
+
+var
+  DatumForm: TDatumForm;
+
+implementation
+
+{$R *.dfm}
+
+procedure TDatumForm.DatePickerChange(Sender: TObject);
+begin
+  Datum:=DatePicker.Date;
+end;
+
+end.

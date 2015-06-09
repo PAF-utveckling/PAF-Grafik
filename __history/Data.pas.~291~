@@ -1,0 +1,340 @@
+unit Data;
+
+interface
+
+uses FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Error,
+  FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def, FireDAC.Stan.Pool,
+  FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.MSSQL, FireDAC.Phys.MSSQLDef,
+  FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt, Data.DB,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.StdCtrls,Vcl.Graphics, Vcl.Controls, Vcl.Grids,
+
+  System.Classes,
+  System.IniFiles, Sysutils, System.DateUtils,
+  Winapi.Windows, Winapi.Messages, System.Variants,
+  Vcl.Forms, Vcl.Dialogs, W7Labels, W7Classes, W7Bars, AdvObj, BaseGrid, AdvGrid,
+  DBAdvGrid, AdvGDIPicture, DBAdvGDIPPicture, FireDAC.Phys.ODBC,
+  FireDAC.Phys.ODBCDef;
+
+  //FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  //FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+  //FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.MSSQL,
+  //FireDAC.Phys.MSSQLDef, FireDAC.VCLUI.Wait, FireDAC.Stan.Param, FireDAC.DatS,
+  //FireDAC.DApt.Intf, FireDAC.DApt, //Data.DB,
+  //FireDAC.Comp.DataSet,
+  //FireDAC.Comp.Client, FireDAC.Comp.UI,
+  //AdvGDIPicture, DBAdvGDIPPicture,
+  //AdvObj,
+  //BaseGrid, AdvGrid, DBAdvGrid, Vcl.ExtCtrls, W7Classes,
+  //W7Bars, Vcl.StdCtrls, W7Labels, FireDAC.Phys.ODBC, FireDAC.Phys.ODBCDef,
+  //AdvGDIPicture, DBAdvGDIPPicture, Data.DB, AdvObj,
+  //W7Classes, BaseGrid, AdvGrid, DBAdvGrid, Vcl.StdCtrls, W7Labels, W7Bars;
+
+type
+
+  TPafGraf =  object
+    Timme,
+    Remsum,
+    UsSum,
+    SignSum: Integer;
+  end;
+
+  TDVTGraf = object
+    RegTid,
+    UndSlutTid,
+    Ledtid : TDateTime;
+    LedDagar,
+    LedTimmar,
+    LedMinuter :Integer
+  end;
+
+  TDataForm = class(TForm)
+    DBPattab          : TDBAdvGrid;
+    DBAdvGDIPPicture1 : TDBAdvGDIPPicture;
+    PafConnection     : TFDConnection;
+    InfoBar           : TW7InformationBar;
+    ALableleft        : TW7ActiveLabel;
+    ALableRight       : TW7ActiveLabel;
+    FDQuery           : TFDQuery;
+    DataSource1       : TDataSource;
+    procedure Reset;
+    procedure Update;
+    procedure FormActivate(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+    function GetPsw2(Psw1: string): String;
+    procedure ReadFromIniFile;
+    procedure WriteToInifile;
+    procedure UpdateDayGraphArray;
+    procedure UpdateDVTGraphArray;
+  public
+    { Public declarations }
+    ParamString, DatabasName, ServerName, Provider, user, password: String;
+    Changed, DatabaseOK, AllOk: Boolean;
+    Datum: TDate;
+    Count: Integer;
+    AntalTider: Integer;
+    Remisser: Integer;
+    DayGrafArray: array[0..24] of TPafGraf;
+    DVTGrafArray: array[0..59] of TDVTGraf;   // Obs bör göras dynamisk!!
+  end;
+
+var
+  DataForm: TDataForm;
+
+implementation
+
+{$R *.dfm}
+
+procedure TDataForm.Reset;
+var i: Integer;
+begin
+
+  for i := 0 to Length(DayGrafArray) do
+  begin
+    DayGrafArray[i].Timme:=0;
+    DayGrafArray[i].Remsum:=0;
+    DayGrafArray[i].UsSum:=0;
+    DayGrafArray[i].SignSum:=0
+  end;
+
+  for i := 0 to Length(DVTGrafArray) do
+  begin
+    with DVTGrafArray[i] do
+    begin
+      RegTid:=0;
+      Ledtid:=0;
+      Undsluttid:=0;
+      LedDagar:=0;
+      LedTimmar:=0;
+      LedMinuter:=0
+    end;
+  end;
+
+end;
+
+
+
+procedure TDataForm.FormActivate(Sender: TObject);
+begin
+(*
+
+  ReadFromIniFile;
+  // Connect database
+  PafConnection.Params.Database:=DatabasName;
+  PafConnection.Params.DriverID:=Provider;
+  PafConnection.DriverName:=Provider;
+  //PafConnection.Params.:=ServerName;
+  PafConnection.Params.UserName:=user;
+  PafConnection.Params.Password:=password;
+  PafConnection.Connected:=True;
+  *)
+end;
+
+procedure TDataForm.FormCreate(Sender: TObject);
+begin
+  Datum:=Now;
+end;
+
+function TDataForm.GetPsw2(Psw1: string): String;
+var
+  S: String;
+  I: Integer;
+begin
+  S := '';
+  I := 1;
+  S := Psw1[12 + I] + Psw1[18 + I] + Psw1[2 + I] + Psw1[6 + I] + Psw1[11 + I] +
+    Psw1[22 + I] + Psw1[8 + I] + Psw1[28 + I];
+  Result := S;
+end;
+
+procedure TDataForm.ReadFromIniFile;
+var
+  SettingFile, SettingFilePAF: TIniFile;
+  I, SPos: Integer;
+  PswKrypt, S, ts, bs, kol: String;
+  ws: Widestring;
+  Ch: Boolean;
+
+begin
+  S := 'Fel';
+  ts:='';
+  //SettingFile := TIniFile.Create(ChangeFileExt(Application.ExeName, '.INI'));
+  AllOk := true;
+  ParamString := '';
+
+
+  if paramcount > 0 then
+  begin // Data från inifil i parameterlista, trol paf.ini
+    ParamString := ParamStr(1);
+    if Sysutils.FileExists(ParamString) then
+    begin
+      SettingFilePAF := TIniFile.Create(ParamString);
+      DatabasName    := SettingFilePAF.ReadString('common', 'database', S);
+      ServerName     := SettingFilePAF.ReadString('common', 'server', S);
+      Provider       := SettingFilePAF.ReadString('common', 'provider', S);
+      PswKrypt       := SettingFilePAF.ReadString('common', 'sps', S);
+      user           := SettingFilePAF.ReadString('common', 'User', 'pa');
+      password := GetPsw2(PswKrypt);
+      AllOk:=True;
+      SettingFilePAF.Free;
+    end
+    else
+    begin
+      ts := 'Inifilen: ' + ParamString + ' kunde inte läsas.';
+      Application.MessageBox(PWidechar(ts), 'Fel!', mb_OK);
+      AllOk := False;
+    end
+  end
+
+end;
+
+procedure TDataForm.WriteToInifile;
+var
+  SettingFile: TIniFile;
+  I: Integer;
+begin
+  // Spara till fil eller registry
+  SettingFile := TIniFile.Create(ChangeFileExt(Application.ExeName, '.INI'));
+  try
+
+  finally
+    SettingFile.Free;
+  end;
+  Changed := true;;
+  //Close;
+end;
+
+procedure TDataForm.UpdateDayGraphArray;
+var
+  i, j,
+  Time,
+  si, us, rg,
+  TempI: Integer;
+  S1, S2: String;
+begin
+  Time := 0;
+  // Fyll GrafArray med signerade undersökningar
+  si := DBPatTab.ColumnByHeader('SIGNDATUMTID');
+  us := DBPatTab.ColumnByHeader('UNDSLUTDATUMTID');
+  rg := DBPatTab.ColumnByHeader('REGTID');
+  i := 1;
+  Count := 0;
+  repeat
+    TempI := 0;
+    S1 := DBPattab.GridCells[si, i];
+    if S1 > '' then
+    begin
+      S2 := S1.Substring(11, 2);
+      Time := StrToInt(S2);
+      TempI := DayGrafArray[Time].SignSum + 1;
+      DayGrafArray[Time].SignSum := TempI;
+    end;
+    S1 := DBPattab.GridCells[us, i];
+    if S1 > '' then
+    begin
+      S2 := S1.Substring(11, 2);
+      Time := StrToInt(S2);
+      TempI := DayGrafArray[Time].UsSum + 1;
+      DayGrafArray[Time].UsSum := TempI;
+    end;
+    S1 := DBPatTab.GridCells[rg, i];
+    if S1 > '' then
+    begin
+      S2 := S1.Substring(11, 2);
+      Time := StrToInt(S2);
+      TempI := DayGrafArray[Time].Remsum + 1;
+      DayGrafArray[Time].Remsum := TempI;
+    end;
+    inc(i);
+  until i > DBPatTab.RowCount;
+end;
+
+
+procedure TDataForm.UpdateDVTGraphArray;
+var
+  TotTime,
+  RegTime, SignTime: TDateTime;
+  i,j,
+  si, tk,
+  rt,
+  us,
+  pk,
+  TempI: Integer;
+  S1, S2, S3: String;
+begin
+
+  // Fyll GrafArray med signerade undersökningar
+  si := DBPatTab.ColumnByHeader('SIGNDATUMTID');
+  us := DBPatTab.ColumnByHeader('UNDSLUTDATUMTID');
+  pk := DBPatTab.ColumnByHeader('PRODKOD');
+  rt := DBPatTab.ColumnByHeader('REGTID');
+  tk := DBPatTab.ColumnByHeader('TURKLASS');
+
+  i := 0; j:=0;
+  Count := 0;
+  DVTGrafArray.
+  while i < DBPatTab.RowCount do
+  begin
+
+    TempI := 0;
+
+    S1 := DBPattab.GridCells[pk, i];
+
+    if S1 = '516' then
+    begin
+      S2 := DBPattab.GridCells[si, i];
+      S3 := DBPattab.GridCells[tk, i];
+      if (S2 > '') and (S3='0') then
+      begin
+        SignTime := StrToDateTime(S2);
+        S2 := DBPattab.GridCells[rt, i];
+        RegTime := StrToDateTime(S2);
+        TotTime:=SignTime - RegTime;
+        DVTGrafArray[j].RegTid:=RegTime;
+        DVTGrafArray[j].Ledtid:=TotTime;
+        DVTGrafArray[j].LedDagar:=trunc(TotTime);
+        DVTGrafArray[j].LedTimmar:=HoursBetween(RegTime,SignTime);
+        DVTGrafArray[j].LedMinuter:=MinutesBetween(RegTime,SignTime) - 60 *
+           DVTGrafArray[j].LedTimmar;
+        inc(j)
+      end;
+    end;
+
+    inc(i)
+  end
+end;
+
+procedure TDataForm.Update;
+var i,j: Integer;
+    TF: TFormatSettings;
+    TR: Extended;
+    S1, S2: String;
+
+begin
+  Formatsettings.create('');
+  Reset;
+  DBPattab.ClearAll;
+  FDQuery.SQL.Clear;
+
+    S2:= QuotedStr(DateToStr(Datum));
+    S1:= 'SELECT REMTAB.REGTID, PATTAB.VIKT, PATTAB.SIGNDATUMTID,' +
+         ' PATTAB.UNDSLUTDATUMTID,'+
+         ' REMTAB.PRODKOD, REMTAB.TURKLASS, PATTAB.REMISSNR'+
+         ' FROM PATTAB INNER JOIN REMTAB ON '+
+         ' PATTAB.REMISSNR = REMTAB.REMISSNR '+
+         ' WHERE '+
+         ' ((PATTAB.UNDSLUTDATUMTID > ' + QuotedStr(DateToStr(Datum)) + ') '+
+         ' and (PATTAB.UNDSLUTDATUMTID < ' + QuotedStr(DateToStr(Datum+1)) +'))';
+
+
+  FDQuery.SQL.Text:=S1;
+  FDQuery.Prepare;
+  FDQuery.Open;
+  UpdateDayGraphArray;
+  UpdateDVTGraphArray;
+  ALableleft.Caption  := 'PatTab antal rader.: ' + IntToStr(i-1);
+
+end;
+
+end.
