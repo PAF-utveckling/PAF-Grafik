@@ -21,7 +21,7 @@ object Mainform: TMainform
     Width = 1239
     Height = 856
     Align = alClient
-    ActivePage = AdvOfficePager11
+    ActivePage = AdvOfficePager13
     ButtonSettings.CloseButtonPicture.Data = {
       424DA20400000000000036040000280000000900000009000000010008000000
       00006C000000C30E0000C30E00000001000000010000427B8400DEEFEF00FFFF
