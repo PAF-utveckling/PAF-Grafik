@@ -2,11 +2,12 @@ program PAFGRAF;
 
 uses
   Vcl.Forms,
-  Main in 'Main.pas' {Form1},
   Data in 'Data.pas' {DataForm},
   DatumSelect in 'DatumSelect.pas' {DatumForm},
   Vcl.Themes,
-  Vcl.Styles;
+  Vcl.Styles,
+  MainNew in 'MainNew.pas' {Mainform},
+  Settings in 'Settings.pas' {FSettings};
 
 {$R *.res}
 
@@ -14,8 +15,9 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.Title := 'PAF grafik';
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TMainform, Mainform);
   Application.CreateForm(TDataForm, DataForm);
   Application.CreateForm(TDatumForm, DatumForm);
+  Application.CreateForm(TFSettings, FSettings);
   Application.Run;
 end.
