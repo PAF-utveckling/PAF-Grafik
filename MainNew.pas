@@ -2,8 +2,13 @@ unit MainNew;
 
 { $ define debug}
 
-// Komment
-// komment 2
+// ***************************************************
+//
+// Det här är startformen för PAF-Grafik
+// (c) Niklas Storck, 2015
+//
+// ***************************************************
+
 interface
 
 uses
