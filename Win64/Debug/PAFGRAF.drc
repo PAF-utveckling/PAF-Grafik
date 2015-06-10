@@ -8,138 +8,154 @@
   resources were bound to the produced executable.
 */
 
-#define AdvMenus_AdvResourceCheckItem 64656
-#define AdvMenus_AdvResourceSubMenuItem 64657
-#define AdvMenus_AdvWinKeyString 64658
-#define AdvChartGDIP_ADVCHARTGDIPERRMSG 64659
-#define Vcl_Imaging_GIFConsts_sInvalidStream 64672
-#define Vcl_Imaging_GIFConsts_sInvalidColor 64673
-#define Vcl_Imaging_GIFConsts_sInvalidBitSize 64674
-#define Vcl_Imaging_GIFConsts_sEmptyColorMap 64675
-#define Vcl_Imaging_GIFConsts_sEmptyImage 64676
-#define Vcl_Imaging_GIFConsts_sMultipleGCE 64677
-#define Vcl_Imaging_GIFConsts_sNoPalette 64678
-#define Vcl_Imaging_GIFConsts_sGIFImageFile 64679
-#define Vcl_Imaging_GIFConsts_sProgressLoading 64680
-#define Vcl_Imaging_GIFConsts_sProgressSaving 64681
-#define Vcl_Imaging_GIFConsts_sProgressConverting 64682
-#define Vcl_Imaging_GIFConsts_sProgressRendering 64683
-#define Vcl_Imaging_GIFConsts_sProgressCopying 64684
-#define Vcl_Imaging_GIFConsts_sProgressOptimizing 64685
-#define AdvMenuUtil_SInvalidPropertyIndex 64686
-#define AdvMenus_AdvResourceRadioItem 64687
-#define Vcl_Imaging_GIFConsts_sOutOfMemDIB 64688
-#define Vcl_Imaging_GIFConsts_sDecodeTooFewBits 64689
-#define Vcl_Imaging_GIFConsts_sDecodeCircular 64690
-#define Vcl_Imaging_GIFConsts_sBadTrailer 64691
-#define Vcl_Imaging_GIFConsts_sBadExtensionInstance 64692
-#define Vcl_Imaging_GIFConsts_sBadBlockSize 64693
-#define Vcl_Imaging_GIFConsts_sBadBlock 64694
-#define Vcl_Imaging_GIFConsts_sUnsupportedClass 64695
-#define Vcl_Imaging_GIFConsts_sInvalidData 64696
-#define Vcl_Imaging_GIFConsts_sBadSize 64697
-#define Vcl_Imaging_GIFConsts_sScreenSizeExceeded 64698
-#define Vcl_Imaging_GIFConsts_sNoColorTable 64699
-#define Vcl_Imaging_GIFConsts_sBadPixelCoordinates 64700
-#define Vcl_Imaging_GIFConsts_sInvalidPixelFormat 64701
-#define Vcl_Imaging_GIFConsts_sBadDimension 64702
-#define Vcl_Imaging_GIFConsts_sNoDIB 64703
-#define Vcl_VDBConsts_SCancelEdit 64704
-#define Vcl_VDBConsts_SRefreshRecord 64705
-#define Vcl_VDBConsts_SApplyUpdates 64706
-#define Vcl_VDBConsts_SCancelUpdates 64707
-#define Vcl_VDBConsts_SDeleteRecordQuestion 64708
-#define Vcl_VDBConsts_SRemoteLogin 64709
-#define Vcl_Imaging_GIFConsts_sOutOfData 64710
-#define Vcl_Imaging_GIFConsts_sTooManyColors 64711
-#define Vcl_Imaging_GIFConsts_sBadColorIndex 64712
-#define Vcl_Imaging_GIFConsts_sBadColorIndexFixed 64713
-#define Vcl_Imaging_GIFConsts_sGIFErrorSaveEmpty 64714
-#define Vcl_Imaging_GIFConsts_sBadSignature 64715
-#define Vcl_Imaging_GIFConsts_sScreenBadColorSize 64716
-#define Vcl_Imaging_GIFConsts_sImageBadColorSize 64717
-#define Vcl_Imaging_GIFConsts_sUnknownExtension 64718
-#define Vcl_Imaging_GIFConsts_sBadExtensionLabel 64719
-#define Vcl_Imaging_pnglang_EPNGCannotChangeTransparentText 64720
-#define Vcl_Imaging_pnglang_EPNGHeaderNotPresentText 64721
-#define Vcl_Imaging_pnglang_EInvalidNewSize 64722
-#define Vcl_Imaging_pnglang_EInvalidSpec 64723
-#define GDIPicture_GDIPERRMSG 64724
-#define Vcl_Imaging_JConsts_sChangeJPGSize 64725
-#define Vcl_Imaging_JConsts_sJPEGError 64726
-#define Vcl_Imaging_JConsts_sJPEGImageFile 64727
-#define Vcl_VDBConsts_SFirstRecord 64728
-#define Vcl_VDBConsts_SPriorRecord 64729
-#define Vcl_VDBConsts_SNextRecord 64730
-#define Vcl_VDBConsts_SLastRecord 64731
-#define Vcl_VDBConsts_SInsertRecord 64732
-#define Vcl_VDBConsts_SDeleteRecord 64733
-#define Vcl_VDBConsts_SEditRecord 64734
-#define Vcl_VDBConsts_SPostEdit 64735
-#define Vcl_Imaging_pnglang_EPNGZLIBErrorText 64736
-#define Vcl_Imaging_pnglang_EPNGInvalidPaletteText 64737
-#define Vcl_Imaging_pnglang_EPNGInvalidFileHeaderText 64738
-#define Vcl_Imaging_pnglang_EPNGIHDRNotFirstText 64739
-#define Vcl_Imaging_pnglang_EPNGSizeExceedsText 64740
-#define Vcl_Imaging_pnglang_EPNGUnknownPalEntryText 64741
-#define Vcl_Imaging_pnglang_EPNGUnknownCriticalChunkText 64742
-#define Vcl_Imaging_pnglang_EPNGUnknownCompressionText 64743
-#define Vcl_Imaging_pnglang_EPNGUnknownInterlaceText 64744
-#define Vcl_Imaging_pnglang_EPNGCannotAssignChunkText 64745
-#define Vcl_Imaging_pnglang_EPNGUnexpectedEndText 64746
-#define Vcl_Imaging_pnglang_EPNGNoImageDataText 64747
-#define Vcl_Imaging_pnglang_EPNGCannotAddChunkText 64748
-#define Vcl_Imaging_pnglang_EPNGCannotAddInvalidImageText 64749
-#define Vcl_Imaging_pnglang_EPNGCouldNotLoadResourceText 64750
-#define Vcl_Imaging_pnglang_EPNGOutMemoryText 64751
-#define FireDAC_Stan_ResStrs_S_FD_Warning 64752
-#define FireDAC_Stan_ResStrs_S_FD_Error 64753
-#define FireDAC_Stan_ResStrs_S_FD_MSSQLWarnNC2008 64754
-#define FireDAC_Stan_ResStrs_S_FD_MSSQLWarnODBC11 64755
-#define FireDAC_Stan_ResStrs_S_FD_MSSQLWarnNC2012 64756
-#define FireDAC_Stan_ResStrs_S_FD_ODBCLoadingManager 64757
-#define FireDAC_Stan_ResStrs_S_FD_ODBCCreatingEnv 64758
-#define FireDAC_Stan_ResStrs_S_FD_ODBCSearchingDrv 64759
-#define FireDAC_Stan_ResStrs_S_FD_ODBCCheckingDrv 64760
-#define FireDAC_Stan_ResStrs_S_FD_ODBCWarnDrvNotFound 64761
-#define FireDAC_Stan_ResStrs_S_FD_ODBCWillBeUsed 64762
-#define FireDAC_Stan_ResStrs_S_FD_ODBCFound 64763
-#define FireDAC_Stan_ResStrs_S_FD_PhysWarnMajVerDiff 64764
-#define Vcl_Imaging_pnglang_EPngInvalidCRCText 64765
-#define Vcl_Imaging_pnglang_EPNGInvalidIHDRText 64766
-#define Vcl_Imaging_pnglang_EPNGMissingMultipleIDATText 64767
-#define FireDAC_Stan_ResStrs_S_FD_SQLiteVTabCannotAttach 64768
-#define FireDAC_Stan_ResStrs_S_FD_SQLiteVTabDataSetBusy 64769
-#define FireDAC_Stan_ResStrs_S_FD_ASADBToolNotFound 64770
-#define FireDAC_Stan_ResStrs_S_FD_MSSQLFSNoTx 64771
-#define FireDAC_Stan_ResStrs_S_FD_MSSQLFSNoPath 64772
-#define FireDAC_Stan_ResStrs_S_FD_MSSQLFSIOError 64773
-#define FireDAC_Stan_ResStrs_S_FD_ClntNotAccessible 64774
-#define FireDAC_Stan_ResStrs_S_FD_ClntConnDefParams 64775
-#define FireDAC_Stan_ResStrs_S_FD_ClntClientInfo 64776
-#define FireDAC_Stan_ResStrs_S_FD_ClntSessionInfo 64777
-#define FireDAC_Stan_ResStrs_S_FD_ClntFailedToLoad 64778
-#define FireDAC_Stan_ResStrs_S_FD_ClntFailedToConnect 64779
-#define FireDAC_Stan_ResStrs_S_FD_ClntNotConnected 64780
-#define FireDAC_Stan_ResStrs_S_FD_ClntCheckingSession 64781
-#define FireDAC_Stan_ResStrs_S_FD_NotFound 64782
-#define FireDAC_Stan_ResStrs_S_FD_Unnamed 64783
-#define FireDAC_Stan_ResStrs_S_FD_PgMultiDimArrNotSup 64784
-#define FireDAC_Stan_ResStrs_S_FD_PgUnsupArrValueTypeNotSup 64785
-#define FireDAC_Stan_ResStrs_S_FD_PgArrIndexOutOfBound 64786
-#define FireDAC_Stan_ResStrs_S_FD_PgCannotDescribeType 64787
-#define FireDAC_Stan_ResStrs_S_FD_SQLiteInitFailed 64788
-#define FireDAC_Stan_ResStrs_S_FD_SQLiteDBNotFound 64789
-#define FireDAC_Stan_ResStrs_S_FD_SQLitePwdInvalid 64790
-#define FireDAC_Stan_ResStrs_S_FD_SQLiteVTabInvalidArgs 64791
-#define FireDAC_Stan_ResStrs_S_FD_SQLiteVTabDSNotFoundOrEmpty 64792
-#define FireDAC_Stan_ResStrs_S_FD_SQLiteVTabDSNotSupported 64793
-#define FireDAC_Stan_ResStrs_S_FD_SQLiteVTabDSSPNotFound 64794
-#define FireDAC_Stan_ResStrs_S_FD_SQLiteVTabDSDataModFailed 64795
-#define FireDAC_Stan_ResStrs_S_FD_SQLiteVTabDSRowidInvalid 64796
-#define FireDAC_Stan_ResStrs_S_FD_SQLiteVTabDSChangedOrFreed 64797
-#define FireDAC_Stan_ResStrs_S_FD_SQLiteVTabDSNoRowExists 64798
-#define FireDAC_Stan_ResStrs_S_FD_SQLiteVTabDSCursorInvalid 64799
+#define AdvMenus_AdvResourceCheckItem 64640
+#define AdvMenus_AdvResourceSubMenuItem 64641
+#define AdvMenus_AdvWinKeyString 64642
+#define AdvChartGDIP_ADVCHARTGDIPERRMSG 64643
+#define Vcl_Imaging_GIFConsts_sInvalidStream 64656
+#define Vcl_Imaging_GIFConsts_sInvalidColor 64657
+#define Vcl_Imaging_GIFConsts_sInvalidBitSize 64658
+#define Vcl_Imaging_GIFConsts_sEmptyColorMap 64659
+#define Vcl_Imaging_GIFConsts_sEmptyImage 64660
+#define Vcl_Imaging_GIFConsts_sMultipleGCE 64661
+#define Vcl_Imaging_GIFConsts_sNoPalette 64662
+#define Vcl_Imaging_GIFConsts_sGIFImageFile 64663
+#define Vcl_Imaging_GIFConsts_sProgressLoading 64664
+#define Vcl_Imaging_GIFConsts_sProgressSaving 64665
+#define Vcl_Imaging_GIFConsts_sProgressConverting 64666
+#define Vcl_Imaging_GIFConsts_sProgressRendering 64667
+#define Vcl_Imaging_GIFConsts_sProgressCopying 64668
+#define Vcl_Imaging_GIFConsts_sProgressOptimizing 64669
+#define AdvMenuUtil_SInvalidPropertyIndex 64670
+#define AdvMenus_AdvResourceRadioItem 64671
+#define Vcl_Imaging_GIFConsts_sOutOfMemDIB 64672
+#define Vcl_Imaging_GIFConsts_sDecodeTooFewBits 64673
+#define Vcl_Imaging_GIFConsts_sDecodeCircular 64674
+#define Vcl_Imaging_GIFConsts_sBadTrailer 64675
+#define Vcl_Imaging_GIFConsts_sBadExtensionInstance 64676
+#define Vcl_Imaging_GIFConsts_sBadBlockSize 64677
+#define Vcl_Imaging_GIFConsts_sBadBlock 64678
+#define Vcl_Imaging_GIFConsts_sUnsupportedClass 64679
+#define Vcl_Imaging_GIFConsts_sInvalidData 64680
+#define Vcl_Imaging_GIFConsts_sBadSize 64681
+#define Vcl_Imaging_GIFConsts_sScreenSizeExceeded 64682
+#define Vcl_Imaging_GIFConsts_sNoColorTable 64683
+#define Vcl_Imaging_GIFConsts_sBadPixelCoordinates 64684
+#define Vcl_Imaging_GIFConsts_sInvalidPixelFormat 64685
+#define Vcl_Imaging_GIFConsts_sBadDimension 64686
+#define Vcl_Imaging_GIFConsts_sNoDIB 64687
+#define Vcl_VDBConsts_SCancelEdit 64688
+#define Vcl_VDBConsts_SRefreshRecord 64689
+#define Vcl_VDBConsts_SApplyUpdates 64690
+#define Vcl_VDBConsts_SCancelUpdates 64691
+#define Vcl_VDBConsts_SDeleteRecordQuestion 64692
+#define Vcl_VDBConsts_SRemoteLogin 64693
+#define Vcl_Imaging_GIFConsts_sOutOfData 64694
+#define Vcl_Imaging_GIFConsts_sTooManyColors 64695
+#define Vcl_Imaging_GIFConsts_sBadColorIndex 64696
+#define Vcl_Imaging_GIFConsts_sBadColorIndexFixed 64697
+#define Vcl_Imaging_GIFConsts_sGIFErrorSaveEmpty 64698
+#define Vcl_Imaging_GIFConsts_sBadSignature 64699
+#define Vcl_Imaging_GIFConsts_sScreenBadColorSize 64700
+#define Vcl_Imaging_GIFConsts_sImageBadColorSize 64701
+#define Vcl_Imaging_GIFConsts_sUnknownExtension 64702
+#define Vcl_Imaging_GIFConsts_sBadExtensionLabel 64703
+#define Vcl_Imaging_pnglang_EPNGCannotChangeTransparentText 64704
+#define Vcl_Imaging_pnglang_EPNGHeaderNotPresentText 64705
+#define Vcl_Imaging_pnglang_EInvalidNewSize 64706
+#define Vcl_Imaging_pnglang_EInvalidSpec 64707
+#define GDIPicture_GDIPERRMSG 64708
+#define Vcl_Imaging_JConsts_sChangeJPGSize 64709
+#define Vcl_Imaging_JConsts_sJPEGError 64710
+#define Vcl_Imaging_JConsts_sJPEGImageFile 64711
+#define Vcl_VDBConsts_SFirstRecord 64712
+#define Vcl_VDBConsts_SPriorRecord 64713
+#define Vcl_VDBConsts_SNextRecord 64714
+#define Vcl_VDBConsts_SLastRecord 64715
+#define Vcl_VDBConsts_SInsertRecord 64716
+#define Vcl_VDBConsts_SDeleteRecord 64717
+#define Vcl_VDBConsts_SEditRecord 64718
+#define Vcl_VDBConsts_SPostEdit 64719
+#define Vcl_Imaging_pnglang_EPNGZLIBErrorText 64720
+#define Vcl_Imaging_pnglang_EPNGInvalidPaletteText 64721
+#define Vcl_Imaging_pnglang_EPNGInvalidFileHeaderText 64722
+#define Vcl_Imaging_pnglang_EPNGIHDRNotFirstText 64723
+#define Vcl_Imaging_pnglang_EPNGSizeExceedsText 64724
+#define Vcl_Imaging_pnglang_EPNGUnknownPalEntryText 64725
+#define Vcl_Imaging_pnglang_EPNGUnknownCriticalChunkText 64726
+#define Vcl_Imaging_pnglang_EPNGUnknownCompressionText 64727
+#define Vcl_Imaging_pnglang_EPNGUnknownInterlaceText 64728
+#define Vcl_Imaging_pnglang_EPNGCannotAssignChunkText 64729
+#define Vcl_Imaging_pnglang_EPNGUnexpectedEndText 64730
+#define Vcl_Imaging_pnglang_EPNGNoImageDataText 64731
+#define Vcl_Imaging_pnglang_EPNGCannotAddChunkText 64732
+#define Vcl_Imaging_pnglang_EPNGCannotAddInvalidImageText 64733
+#define Vcl_Imaging_pnglang_EPNGCouldNotLoadResourceText 64734
+#define Vcl_Imaging_pnglang_EPNGOutMemoryText 64735
+#define FireDAC_Stan_ResStrs_S_FD_OracleWarnSrvClntVer 64736
+#define FireDAC_Stan_ResStrs_S_FD_OracleWarnASCII 64737
+#define FireDAC_Stan_ResStrs_S_FD_OracleWarnLibNotInHome 64738
+#define FireDAC_Stan_ResStrs_S_FD_OracleWarnArchNotSup 64739
+#define FireDAC_Stan_ResStrs_S_FD_OracleWarnBinNotInPath 64740
+#define FireDAC_Stan_ResStrs_S_FD_OracleWarnInvOCIVer 64741
+#define FireDAC_Stan_ResStrs_S_FD_OracleMsgLibFound 64742
+#define FireDAC_Stan_ResStrs_S_FD_OracleMsgChckHome 64743
+#define FireDAC_Stan_ResStrs_S_FD_OracleMsgSkipHome 64744
+#define FireDAC_Stan_ResStrs_S_FD_OracleMsgSrchHome 64745
+#define FireDAC_Stan_ResStrs_S_FD_OracleMsgNoHome 64746
+#define FireDAC_Stan_ResStrs_S_FD_OracleMsgSrchOIC 64747
+#define FireDAC_Stan_ResStrs_S_FD_PhysWarnMajVerDiff 64748
+#define Vcl_Imaging_pnglang_EPngInvalidCRCText 64749
+#define Vcl_Imaging_pnglang_EPNGInvalidIHDRText 64750
+#define Vcl_Imaging_pnglang_EPNGMissingMultipleIDATText 64751
+#define FireDAC_Stan_ResStrs_S_FD_NotFound 64752
+#define FireDAC_Stan_ResStrs_S_FD_Unnamed 64753
+#define FireDAC_Stan_ResStrs_S_FD_Warning 64754
+#define FireDAC_Stan_ResStrs_S_FD_Error 64755
+#define FireDAC_Stan_ResStrs_S_FD_MSSQLWarnNC2008 64756
+#define FireDAC_Stan_ResStrs_S_FD_MSSQLWarnODBC11 64757
+#define FireDAC_Stan_ResStrs_S_FD_MSSQLWarnNC2012 64758
+#define FireDAC_Stan_ResStrs_S_FD_ODBCLoadingManager 64759
+#define FireDAC_Stan_ResStrs_S_FD_ODBCCreatingEnv 64760
+#define FireDAC_Stan_ResStrs_S_FD_ODBCSearchingDrv 64761
+#define FireDAC_Stan_ResStrs_S_FD_ODBCCheckingDrv 64762
+#define FireDAC_Stan_ResStrs_S_FD_ODBCWarnDrvNotFound 64763
+#define FireDAC_Stan_ResStrs_S_FD_ODBCWillBeUsed 64764
+#define FireDAC_Stan_ResStrs_S_FD_ODBCFound 64765
+#define FireDAC_Stan_ResStrs_S_FD_OracleWarnLowMinVer 64766
+#define FireDAC_Stan_ResStrs_S_FD_OracleWarnUnicode 64767
+#define FireDAC_Stan_ResStrs_S_FD_SQLiteVTabDSNoRowExists 64768
+#define FireDAC_Stan_ResStrs_S_FD_SQLiteVTabDSCursorInvalid 64769
+#define FireDAC_Stan_ResStrs_S_FD_SQLiteVTabCannotAttach 64770
+#define FireDAC_Stan_ResStrs_S_FD_SQLiteVTabDataSetBusy 64771
+#define FireDAC_Stan_ResStrs_S_FD_ASADBToolNotFound 64772
+#define FireDAC_Stan_ResStrs_S_FD_MSSQLFSNoTx 64773
+#define FireDAC_Stan_ResStrs_S_FD_MSSQLFSNoPath 64774
+#define FireDAC_Stan_ResStrs_S_FD_MSSQLFSIOError 64775
+#define FireDAC_Stan_ResStrs_S_FD_ClntNotAccessible 64776
+#define FireDAC_Stan_ResStrs_S_FD_ClntConnDefParams 64777
+#define FireDAC_Stan_ResStrs_S_FD_ClntClientInfo 64778
+#define FireDAC_Stan_ResStrs_S_FD_ClntSessionInfo 64779
+#define FireDAC_Stan_ResStrs_S_FD_ClntFailedToLoad 64780
+#define FireDAC_Stan_ResStrs_S_FD_ClntFailedToConnect 64781
+#define FireDAC_Stan_ResStrs_S_FD_ClntNotConnected 64782
+#define FireDAC_Stan_ResStrs_S_FD_ClntCheckingSession 64783
+#define FireDAC_Stan_ResStrs_S_FD_IBTraceIsActive 64784
+#define FireDAC_Stan_ResStrs_S_FD_PgProcNotFound 64785
+#define FireDAC_Stan_ResStrs_S_FD_PgMultiDimArrNotSup 64786
+#define FireDAC_Stan_ResStrs_S_FD_PgUnsupArrValueTypeNotSup 64787
+#define FireDAC_Stan_ResStrs_S_FD_PgArrIndexOutOfBound 64788
+#define FireDAC_Stan_ResStrs_S_FD_PgCannotDescribeType 64789
+#define FireDAC_Stan_ResStrs_S_FD_SQLiteInitFailed 64790
+#define FireDAC_Stan_ResStrs_S_FD_SQLiteDBNotFound 64791
+#define FireDAC_Stan_ResStrs_S_FD_SQLitePwdInvalid 64792
+#define FireDAC_Stan_ResStrs_S_FD_SQLiteVTabInvalidArgs 64793
+#define FireDAC_Stan_ResStrs_S_FD_SQLiteVTabDSNotFoundOrEmpty 64794
+#define FireDAC_Stan_ResStrs_S_FD_SQLiteVTabDSNotSupported 64795
+#define FireDAC_Stan_ResStrs_S_FD_SQLiteVTabDSSPNotFound 64796
+#define FireDAC_Stan_ResStrs_S_FD_SQLiteVTabDSDataModFailed 64797
+#define FireDAC_Stan_ResStrs_S_FD_SQLiteVTabDSRowidInvalid 64798
+#define FireDAC_Stan_ResStrs_S_FD_SQLiteVTabDSChangedOrFreed 64799
 #define FireDAC_Stan_ResStrs_S_FD_OraNoCursorParams 64800
 #define FireDAC_Stan_ResStrs_S_FD_OraNotInstalled 64801
 #define FireDAC_Stan_ResStrs_S_FD_OraBadVersion 64802
@@ -152,10 +168,10 @@
 #define FireDAC_Stan_ResStrs_S_FD_OraNotPackageProc 64809
 #define FireDAC_Stan_ResStrs_S_FD_OraBadTableType 64810
 #define FireDAC_Stan_ResStrs_S_FD_OraUnNamedRecParam 64811
-#define FireDAC_Stan_ResStrs_S_FD_OraCantConvNum 64812
-#define FireDAC_Stan_ResStrs_S_FD_OraPipeAlertToMany 64813
-#define FireDAC_Stan_ResStrs_S_FD_IBTraceIsActive 64814
-#define FireDAC_Stan_ResStrs_S_FD_PgProcNotFound 64815
+#define FireDAC_Stan_ResStrs_S_FD_OraCantUTF16 64812
+#define FireDAC_Stan_ResStrs_S_FD_OraCantSetCharsetInUT16 64813
+#define FireDAC_Stan_ResStrs_S_FD_OraCantConvNum 64814
+#define FireDAC_Stan_ResStrs_S_FD_OraPipeAlertToMany 64815
 #define FireDAC_Stan_ResStrs_S_FD_ScrVarMissedCloseBrace 64816
 #define FireDAC_Stan_ResStrs_S_FD_ScrVarUnsupType 64817
 #define FireDAC_Stan_ResStrs_S_FD_ScrNotLogged 64818
@@ -962,6 +978,24 @@ BEGIN
 	Vcl_Imaging_pnglang_EPNGCannotAddInvalidImageText,	L"It's not allowed to add a new chunk because the current image is invalid."
 	Vcl_Imaging_pnglang_EPNGCouldNotLoadResourceText,	L"The png image could not be loaded from the resource ID."
 	Vcl_Imaging_pnglang_EPNGOutMemoryText,	L"Some operation could not be performed because the system is out of resources. Close some windows and try again."
+	FireDAC_Stan_ResStrs_S_FD_OracleWarnSrvClntVer,	L"Warning: The client [%s] and server [%s] versions may lead to various issues."
+	FireDAC_Stan_ResStrs_S_FD_OracleWarnASCII,	L"Warning: The US7ASCII for Western Europa languages may lead to conversion losts."
+	FireDAC_Stan_ResStrs_S_FD_OracleWarnLibNotInHome,	L"Warning: [%s] does not exists in Oracle Home [%s]"
+	FireDAC_Stan_ResStrs_S_FD_OracleWarnArchNotSup,	L"Warning: not supported architecture [%s]. Required [%s]"
+	FireDAC_Stan_ResStrs_S_FD_OracleWarnBinNotInPath,	L"Warning: bin folder [%s] is not in PATH"
+	FireDAC_Stan_ResStrs_S_FD_OracleWarnInvOCIVer,	L"Warning: invalid OIC version [%s]. Minimal version [10.0]"
+	FireDAC_Stan_ResStrs_S_FD_OracleMsgLibFound,	L"Found [%s], position [%d], in [%s]"
+	FireDAC_Stan_ResStrs_S_FD_OracleMsgChckHome,	L"Checking Oracle Home at key [%s]"
+	FireDAC_Stan_ResStrs_S_FD_OracleMsgSkipHome,	L"Skipping, position [%d] is after [%d]"
+	FireDAC_Stan_ResStrs_S_FD_OracleMsgSrchHome,	L"Searching for Oracle Home"
+	FireDAC_Stan_ResStrs_S_FD_OracleMsgNoHome,	L"Not found !"
+	FireDAC_Stan_ResStrs_S_FD_OracleMsgSrchOIC,	L"Searching for Instant Client"
+	FireDAC_Stan_ResStrs_S_FD_PhysWarnMajVerDiff,	L"Warning: The client [%s] and server [%s] major versions difference > 1."
+	Vcl_Imaging_pnglang_EPngInvalidCRCText,	L"This \"Portable Network Graphics\" image is not valid because it contains invalid pieces of data (crc error)"
+	Vcl_Imaging_pnglang_EPNGInvalidIHDRText,	L"The \"Portable Network Graphics\" image could not be loaded because one of its main piece of data (ihdr) might be corrupted"
+	Vcl_Imaging_pnglang_EPNGMissingMultipleIDATText,	L"This \"Portable Network Graphics\" image is invalid because it has missing image parts."
+	FireDAC_Stan_ResStrs_S_FD_NotFound,	L"<not found>"
+	FireDAC_Stan_ResStrs_S_FD_Unnamed,	L"Unnamed"
 	FireDAC_Stan_ResStrs_S_FD_Warning,	L"Warning:"
 	FireDAC_Stan_ResStrs_S_FD_Error,	L"Error:"
 	FireDAC_Stan_ResStrs_S_FD_MSSQLWarnNC2008,	L"Warning: SQL NC 2008 is not full compatible with SQL Server 2000."
@@ -974,10 +1008,10 @@ BEGIN
 	FireDAC_Stan_ResStrs_S_FD_ODBCWarnDrvNotFound,	L"Error: specified ODBC drivers are not found"
 	FireDAC_Stan_ResStrs_S_FD_ODBCWillBeUsed,	L"Will be used [%s]"
 	FireDAC_Stan_ResStrs_S_FD_ODBCFound,	L"Found [%s]"
-	FireDAC_Stan_ResStrs_S_FD_PhysWarnMajVerDiff,	L"Warning: The client [%s] and server [%s] major versions difference > 1."
-	Vcl_Imaging_pnglang_EPngInvalidCRCText,	L"This \"Portable Network Graphics\" image is not valid because it contains invalid pieces of data (crc error)"
-	Vcl_Imaging_pnglang_EPNGInvalidIHDRText,	L"The \"Portable Network Graphics\" image could not be loaded because one of its main piece of data (ihdr) might be corrupted"
-	Vcl_Imaging_pnglang_EPNGMissingMultipleIDATText,	L"This \"Portable Network Graphics\" image is invalid because it has missing image parts."
+	FireDAC_Stan_ResStrs_S_FD_OracleWarnLowMinVer,	L"Warning: The client version [%s] with low minor version may be unstable."
+	FireDAC_Stan_ResStrs_S_FD_OracleWarnUnicode,	L"Warning: The client version [%s] does not support Unicode in full."
+	FireDAC_Stan_ResStrs_S_FD_SQLiteVTabDSNoRowExists,	L"VTab: Specified row does not exist"
+	FireDAC_Stan_ResStrs_S_FD_SQLiteVTabDSCursorInvalid,	L"VTab: Invalid cursor"
 	FireDAC_Stan_ResStrs_S_FD_SQLiteVTabCannotAttach,	L"TFDLocalSQL must be attached to an active SQLite connection"
 	FireDAC_Stan_ResStrs_S_FD_SQLiteVTabDataSetBusy,	L"VTab: DataSet [%s] is busy by another result set"
 	FireDAC_Stan_ResStrs_S_FD_ASADBToolNotFound,	L"Cannot perform action. DBTOOLn.DLL is not found"
@@ -992,8 +1026,8 @@ BEGIN
 	FireDAC_Stan_ResStrs_S_FD_ClntFailedToConnect,	L"Failed to connect to DBMS !"
 	FireDAC_Stan_ResStrs_S_FD_ClntNotConnected,	L"Not connected to DBMS."
 	FireDAC_Stan_ResStrs_S_FD_ClntCheckingSession,	L"Checking session ..."
-	FireDAC_Stan_ResStrs_S_FD_NotFound,	L"<not found>"
-	FireDAC_Stan_ResStrs_S_FD_Unnamed,	L"Unnamed"
+	FireDAC_Stan_ResStrs_S_FD_IBTraceIsActive,	L"Cannot start a trace session, when there is an active one"
+	FireDAC_Stan_ResStrs_S_FD_PgProcNotFound,	L"Stored procedure [%s] is not found"
 	FireDAC_Stan_ResStrs_S_FD_PgMultiDimArrNotSup,	L"Array-typed variable [%s] dimensions [%d] are not supported. Only sigle dimensional simple type arrays are supported"
 	FireDAC_Stan_ResStrs_S_FD_PgUnsupArrValueTypeNotSup,	L"Array-typed variable [%s] unsupported element type [%d]. Only sigle dimensional simple type arrays are supported"
 	FireDAC_Stan_ResStrs_S_FD_PgArrIndexOutOfBound,	L"Array-typed variable [%s] item index [%d] is out of bounds [%d, %d]"
@@ -1008,8 +1042,6 @@ BEGIN
 	FireDAC_Stan_ResStrs_S_FD_SQLiteVTabDSDataModFailed,	L"VTab: Dataset modification failed"
 	FireDAC_Stan_ResStrs_S_FD_SQLiteVTabDSRowidInvalid,	L"VTab: Explicit ROWID at INSERT is not supported"
 	FireDAC_Stan_ResStrs_S_FD_SQLiteVTabDSChangedOrFreed,	L"VTab: Dataset state was changed. Cannot perform operation"
-	FireDAC_Stan_ResStrs_S_FD_SQLiteVTabDSNoRowExists,	L"VTab: Specified row does not exist"
-	FireDAC_Stan_ResStrs_S_FD_SQLiteVTabDSCursorInvalid,	L"VTab: Invalid cursor"
 	FireDAC_Stan_ResStrs_S_FD_OraNoCursorParams,	L"No cursor parameters are defined. Include fiMeta into FetchOptions.Items"
 	FireDAC_Stan_ResStrs_S_FD_OraNotInstalled,	L"OCI is not properly installed on this machine (NOE1/INIT)"
 	FireDAC_Stan_ResStrs_S_FD_OraBadVersion,	L"Unsupported OCI library [%s] version [%s]. At least version 8.0.3 is required (NOE2/INIT)"
@@ -1022,10 +1054,10 @@ BEGIN
 	FireDAC_Stan_ResStrs_S_FD_OraNotPackageProc,	L"[%s, #%d] is not found in [%s] package (NOE134/SP)"
 	FireDAC_Stan_ResStrs_S_FD_OraBadTableType,	L"Parameter with type TABLE OF BOOLEAN/RECORD not supported (use TFDQuery) (NOE135/SP)"
 	FireDAC_Stan_ResStrs_S_FD_OraUnNamedRecParam,	L"Parameter with type RECORD must be of named type (use TFDQuery) (NOE142/SP)"
+	FireDAC_Stan_ResStrs_S_FD_OraCantUTF16,	L"To initialize OCI in UTF16 mode, OCI must be of version 8.1 or higher"
+	FireDAC_Stan_ResStrs_S_FD_OraCantSetCharsetInUT16,	L"To set character set in UTF16 mode, OCI must be of version 9.2 or higher"
 	FireDAC_Stan_ResStrs_S_FD_OraCantConvNum,	L"Cannot convert Oracle Number [%s] to TBcd"
 	FireDAC_Stan_ResStrs_S_FD_OraPipeAlertToMany,	L"DBMS_PIPE event alerter supports only single event name"
-	FireDAC_Stan_ResStrs_S_FD_IBTraceIsActive,	L"Cannot start a trace session, when there is an active one"
-	FireDAC_Stan_ResStrs_S_FD_PgProcNotFound,	L"Stored procedure [%s] is not found"
 	FireDAC_Stan_ResStrs_S_FD_ScrVarMissedCloseBrace,	L"VARIABLE has missed right brace"
 	FireDAC_Stan_ResStrs_S_FD_ScrVarUnsupType,	L"VARIABLE has unsupported data type"
 	FireDAC_Stan_ResStrs_S_FD_ScrNotLogged,	L"Cannot execute command. Not logged on"
@@ -1761,6 +1793,7 @@ END
 /* c:\program files (x86)\embarcadero\studio\15.0\lib\Win64\release\DBCtrls.res */
 /* c:\program files (x86)\embarcadero\studio\15.0\lib\Win64\release\ExtDlgs.res */
 /* C:\Users\Delat\Documents\tmssoftware\TMS Component Pack\AdvGDIPicture.res */
+/* C:\Users\Delat\Documents\tmssoftware\TMS Component Pack\DBADVNAV.RES */
 /* C:\Users\astri_000\Documents\GitHub\PAF-Grafik\Data.dfm */
 /* C:\Users\astri_000\Documents\GitHub\PAF-Grafik\DatumSelect.dfm */
 /* c:\program files (x86)\embarcadero\studio\15.0\lib\Win64\release\CategoryButtons.res */

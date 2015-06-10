@@ -13,7 +13,8 @@ uses FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Error,
   Winapi.Windows, Winapi.Messages, System.Variants,
   Vcl.Forms, Vcl.Dialogs, W7Labels, W7Classes, W7Bars, AdvObj, BaseGrid, AdvGrid,
   DBAdvGrid, AdvGDIPicture, DBAdvGDIPPicture, FireDAC.Phys.ODBC,
-  FireDAC.Phys.ODBCDef;
+  FireDAC.Phys.ODBCDef, FireDAC.Phys.OracleDef, Vcl.ExtCtrls, DBAdvNavigator,
+  FireDAC.Phys.Oracle;
 
 
 type
@@ -42,7 +43,8 @@ type
     ALableRight       : TW7ActiveLabel;
     FDQuery           : TFDQuery;
     DataSource1       : TDataSource;
-    FDQuery1: TFDQuery;
+    FDPhysOracleDriverLink1: TFDPhysOracleDriverLink;
+    DBAdvNavigator1: TDBAdvNavigator;
     procedure Reset;
     procedure Update;
     procedure FormActivate(Sender: TObject);

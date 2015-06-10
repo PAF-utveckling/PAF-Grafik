@@ -29,10 +29,11 @@ object DataForm: TDataForm
     Width = 852
     Height = 425
     Cursor = crDefault
+    Hint = 'Det h'#228'r '#228'r en hint!'
     Align = alBottom
     ColCount = 8
     DrawingStyle = gdsClassic
-    RowCount = 2
+    RowCount = 101
     FixedRows = 1
     ScrollBars = ssBoth
     TabOrder = 0
@@ -178,7 +179,7 @@ object DataForm: TDataForm
         PrintFont.Height = -11
         PrintFont.Name = 'Tahoma'
         PrintFont.Style = []
-        Width = 103
+        Width = 100
       end
       item
         Borders = []
@@ -203,7 +204,7 @@ object DataForm: TDataForm
         PrintFont.Height = -11
         PrintFont.Name = 'Tahoma'
         PrintFont.Style = []
-        Width = 134
+        Width = 131
       end
       item
         Borders = []
@@ -228,7 +229,7 @@ object DataForm: TDataForm
         PrintFont.Height = -11
         PrintFont.Name = 'Tahoma'
         PrintFont.Style = []
-        Width = 76
+        Width = 74
       end
       item
         Alignment = taRightJustify
@@ -254,7 +255,7 @@ object DataForm: TDataForm
         PrintFont.Height = -11
         PrintFont.Name = 'Tahoma'
         PrintFont.Style = []
-        Width = 35
+        Width = 34
       end
       item
         Borders = []
@@ -280,7 +281,7 @@ object DataForm: TDataForm
         PrintFont.Height = -11
         PrintFont.Name = 'Tahoma'
         PrintFont.Style = []
-        Width = 35
+        Width = 34
       end
       item
         Alignment = taRightJustify
@@ -306,7 +307,7 @@ object DataForm: TDataForm
         PrintFont.Height = -11
         PrintFont.Name = 'Tahoma'
         PrintFont.Style = []
-        Width = 35
+        Width = 34
       end
       item
         Borders = []
@@ -332,7 +333,7 @@ object DataForm: TDataForm
         PrintFont.Height = -11
         PrintFont.Name = 'Tahoma'
         PrintFont.Style = []
-        Width = 99
+        Width = 96
       end>
     DataSource = DataSource1
     PageMode = False
@@ -473,17 +474,15 @@ object DataForm: TDataForm
       80000001C0000003C0000003E0000007F000000FF800001FFC00003FFF0000FF
       FFC003FF}
     ShowUnicode = False
-    ExplicitTop = 326
-    ExplicitWidth = 1150
     ColWidths = (
       20
-      103
-      134
-      76
-      35
-      35
-      35
-      99)
+      100
+      131
+      74
+      34
+      34
+      34
+      96)
   end
   object InfoBar: TW7InformationBar
     AlignWithMargins = True
@@ -492,8 +491,6 @@ object DataForm: TDataForm
     Width = 846
     Height = 53
     Version = '1.0.2.0'
-    ExplicitTop = 754
-    ExplicitWidth = 1144
     object ALableleft: TW7ActiveLabel
       Left = 48
       Top = 24
@@ -529,15 +526,38 @@ object DataForm: TDataForm
       Font.Style = []
       ParentFont = False
     end
+    object DBAdvNavigator1: TDBAdvNavigator
+      Left = 512
+      Top = 17
+      Width = 240
+      Height = 25
+      AutoThemeAdapt = False
+      DataSource = DataSource1
+      Color = clBtnFace
+      ColorTo = clNone
+      ColorDown = 14210002
+      ColorDownTo = clNone
+      ColorHot = 13289415
+      ColorHotTo = clNone
+      DeleteDisabled = False
+      InsertDisabled = False
+      GlyphSize = gsSmall
+      GlyphCustomSize = 0
+      Orientation = noHorizontal
+      TabOrder = 0
+      Version = '1.3.1.2'
+    end
   end
   object PafConnection: TFDConnection
     Params.Strings = (
       'ConnectionDef=PAF')
+    Connected = True
     LoginPrompt = False
-    Left = 249
-    Top = 71
+    Left = 97
+    Top = 79
   end
   object FDQuery: TFDQuery
+    Active = True
     Connection = PafConnection
     SQL.Strings = (
       'SELECT PATTAB.SIGNDATUMTID,'
@@ -553,31 +573,16 @@ object DataForm: TDataForm
       
         'WHERE  ((PATTAB.UNDSLUTDATUMTID > '#39'2014-10-07'#39')  and (REMTAB.REG' +
         'TID < '#39'2014-10-07'#39'))')
-    Left = 368
-    Top = 72
+    Left = 216
+    Top = 80
   end
   object DataSource1: TDataSource
     DataSet = FDQuery
-    Left = 488
-    Top = 176
+    Left = 304
+    Top = 104
   end
-  object FDQuery1: TFDQuery
-    Connection = PafConnection
-    SQL.Strings = (
-      'SELECT PATTAB.SIGNDATUMTID,'
-      '       PATTAB.UNDSLUTDATUMTID,'
-      '       REMTAB.REGTID,'
-      '       REMTAB.VIKT,'
-      '       REMTAB.PRODKOD,'
-      '       REMTAB.TURKLASS,'
-      '       PATTAB.REMISSNR'
-      
-        'FROM PATTAB INNER JOIN REMTAB ON  PATTAB.REMISSNR = REMTAB.REMIS' +
-        'SNR'
-      
-        'WHERE  ((PATTAB.UNDSLUTDATUMTID > '#39'2014-10-07'#39')  and (REMTAB.REG' +
-        'TID < '#39'2014-10-07'#39'))')
-    Left = 328
-    Top = 160
+  object FDPhysOracleDriverLink1: TFDPhysOracleDriverLink
+    Left = 600
+    Top = 88
   end
 end
