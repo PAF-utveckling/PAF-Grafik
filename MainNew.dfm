@@ -2,8 +2,8 @@ object Mainform: TMainform
   Left = 0
   Top = 0
   Caption = 'Mainform'
-  ClientHeight = 856
-  ClientWidth = 1239
+  ClientHeight = 639
+  ClientWidth = 888
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,10 +18,10 @@ object Mainform: TMainform
   object AdvOfficePager1: TAdvOfficePager
     Left = 0
     Top = 0
-    Width = 1239
-    Height = 856
+    Width = 888
+    Height = 639
     Align = alClient
-    ActivePage = AdvOfficePager13
+    ActivePage = AdvOfficePager11
     ButtonSettings.CloseButtonPicture.Data = {
       424DA20400000000000036040000280000000900000009000000010008000000
       00006C000000C30E0000C30E00000001000000010000427B8400DEEFEF00FFFF
@@ -305,16 +305,20 @@ object Mainform: TMainform
     ButtonSettings.ScrollButtonFirstHint = 'First'
     ButtonSettings.ScrollButtonLastHint = 'Last'
     ButtonSettings.ClosedListButtonHint = 'Closed Pages'
+    DoubleBuffered = True
     ShowShortCutHints = False
     TabOrder = 0
+    ExplicitWidth = 1239
+    ExplicitHeight = 856
     NextPictureChanged = False
     PrevPictureChanged = False
     object AdvOfficePager11: TAdvOfficePage
       Left = 1
       Top = 26
-      Width = 1237
-      Height = 828
+      Width = 886
+      Height = 611
       Caption = 'Dagen'
+      DoubleBuffered = True
       PageAppearance.BorderColor = 14922381
       PageAppearance.Color = 16445929
       PageAppearance.ColorTo = 15587527
@@ -372,8 +376,8 @@ object Mainform: TMainform
       TabAppearance.BackGround.Direction = gdHorizontal
       object AdvOfficeStatusBar1: TAdvOfficeStatusBar
         Left = 2
-        Top = 807
-        Width = 1233
+        Top = 590
+        Width = 882
         Height = 19
         AnchorHint = False
         Color = clMoneyGreen
@@ -476,14 +480,16 @@ object Mainform: TMainform
           end>
         ShowSplitter = True
         SimplePanel = False
-        Version = '1.5.3.0'
+        Version = '1.5.3.2'
+        ExplicitTop = 807
+        ExplicitWidth = 1233
       end
       object ChartDay: TAdvGDIPChartView
         AlignWithMargins = True
         Left = 5
         Top = 5
-        Width = 1227
-        Height = 799
+        Width = 876
+        Height = 582
         ShowDesignHelper = True
         Align = alClient
         Color = clWhite
@@ -858,19 +864,22 @@ object Mainform: TMainform
         Tracker.Title.Font.Name = 'Tahoma'
         Tracker.Title.Font.Style = []
         Tracker.Title.Text = 'TRACKER'
-        Version = '3.2.1.5 DECEMBER, 2014'
+        Version = '3.2.6.0 MAY, 2015'
         XAxisZoomSensitivity = 1.000000000000000000
         YAxisZoomSensitivity = 1.000000000000000000
         DoubleBuffered = True
+        ExplicitWidth = 1227
+        ExplicitHeight = 799
       end
     end
     object AdvOfficePager12: TAdvOfficePage
       Left = 1
       Top = 26
-      Width = 1237
-      Height = 828
+      Width = 886
+      Height = 611
       BadgeTextColor = clBlue
       Caption = 'DVT - ledtider'
+      DoubleBuffered = True
       PageAppearance.BorderColor = 14922381
       PageAppearance.Color = 16445929
       PageAppearance.ColorTo = 15587527
@@ -932,8 +941,8 @@ object Mainform: TMainform
         AlignWithMargins = True
         Left = 5
         Top = 5
-        Width = 1227
-        Height = 818
+        Width = 876
+        Height = 601
         ShowDesignHelper = True
         Align = alClient
         Color = clWhite
@@ -1303,18 +1312,21 @@ object Mainform: TMainform
         Tracker.Title.Font.Name = 'Tahoma'
         Tracker.Title.Font.Style = []
         Tracker.Title.Text = 'TRACKER'
-        Version = '3.2.1.5 DECEMBER, 2014'
+        Version = '3.2.6.0 MAY, 2015'
         XAxisZoomSensitivity = 1.000000000000000000
         YAxisZoomSensitivity = 1.000000000000000000
         DoubleBuffered = True
+        ExplicitWidth = 1227
+        ExplicitHeight = 818
       end
     end
     object AdvOfficePager13: TAdvOfficePage
       Left = 1
       Top = 26
-      Width = 1237
-      Height = 828
+      Width = 886
+      Height = 611
       Caption = 'AdvOfficePager13'
+      DoubleBuffered = True
       PageAppearance.BorderColor = 14922381
       PageAppearance.Color = 16445929
       PageAppearance.ColorTo = 15587527
@@ -1742,7 +1754,7 @@ object Mainform: TMainform
         Tracker.Title.Font.Name = 'Tahoma'
         Tracker.Title.Font.Style = []
         Tracker.Title.Text = 'TRACKER'
-        Version = '3.2.1.5 DECEMBER, 2014'
+        Version = '3.2.6.0 MAY, 2015'
         XAxisZoomSensitivity = 1.000000000000000000
         YAxisZoomSensitivity = 1.000000000000000000
         DoubleBuffered = True
@@ -1755,7 +1767,7 @@ object Mainform: TMainform
     Top = 96
   end
   object AdvPopupMenu1: TAdvPopupMenu
-    Version = '2.5.5.1'
+    Version = '2.5.7.0'
     Left = 808
     Top = 80
     object Vljdata1: TMenuItem

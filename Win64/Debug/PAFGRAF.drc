@@ -8,72 +8,74 @@
   resources were bound to the produced executable.
 */
 
-#define AdvMenus_AdvResourceSubMenuItem 64656
-#define AdvMenus_AdvWinKeyString 64657
-#define Vcl_Imaging_GIFConsts_sInvalidColor 64672
-#define Vcl_Imaging_GIFConsts_sInvalidBitSize 64673
-#define Vcl_Imaging_GIFConsts_sEmptyColorMap 64674
-#define Vcl_Imaging_GIFConsts_sEmptyImage 64675
-#define Vcl_Imaging_GIFConsts_sMultipleGCE 64676
-#define Vcl_Imaging_GIFConsts_sNoPalette 64677
-#define Vcl_Imaging_GIFConsts_sGIFImageFile 64678
-#define Vcl_Imaging_GIFConsts_sProgressLoading 64679
-#define Vcl_Imaging_GIFConsts_sProgressSaving 64680
-#define Vcl_Imaging_GIFConsts_sProgressConverting 64681
-#define Vcl_Imaging_GIFConsts_sProgressRendering 64682
-#define Vcl_Imaging_GIFConsts_sProgressCopying 64683
-#define Vcl_Imaging_GIFConsts_sProgressOptimizing 64684
-#define AdvMenuUtil_SInvalidPropertyIndex 64685
-#define AdvMenus_AdvResourceRadioItem 64686
-#define AdvMenus_AdvResourceCheckItem 64687
-#define Vcl_Imaging_GIFConsts_sDecodeTooFewBits 64688
-#define Vcl_Imaging_GIFConsts_sDecodeCircular 64689
-#define Vcl_Imaging_GIFConsts_sBadTrailer 64690
-#define Vcl_Imaging_GIFConsts_sBadExtensionInstance 64691
-#define Vcl_Imaging_GIFConsts_sBadBlockSize 64692
-#define Vcl_Imaging_GIFConsts_sBadBlock 64693
-#define Vcl_Imaging_GIFConsts_sUnsupportedClass 64694
-#define Vcl_Imaging_GIFConsts_sInvalidData 64695
-#define Vcl_Imaging_GIFConsts_sBadSize 64696
-#define Vcl_Imaging_GIFConsts_sScreenSizeExceeded 64697
-#define Vcl_Imaging_GIFConsts_sNoColorTable 64698
-#define Vcl_Imaging_GIFConsts_sBadPixelCoordinates 64699
-#define Vcl_Imaging_GIFConsts_sInvalidPixelFormat 64700
-#define Vcl_Imaging_GIFConsts_sBadDimension 64701
-#define Vcl_Imaging_GIFConsts_sNoDIB 64702
-#define Vcl_Imaging_GIFConsts_sInvalidStream 64703
-#define Vcl_VDBConsts_SRefreshRecord 64704
-#define Vcl_VDBConsts_SApplyUpdates 64705
-#define Vcl_VDBConsts_SCancelUpdates 64706
-#define Vcl_VDBConsts_SDeleteRecordQuestion 64707
-#define Vcl_VDBConsts_SRemoteLogin 64708
-#define Vcl_Imaging_GIFConsts_sOutOfData 64709
-#define Vcl_Imaging_GIFConsts_sTooManyColors 64710
-#define Vcl_Imaging_GIFConsts_sBadColorIndex 64711
-#define Vcl_Imaging_GIFConsts_sBadColorIndexFixed 64712
-#define Vcl_Imaging_GIFConsts_sGIFErrorSaveEmpty 64713
-#define Vcl_Imaging_GIFConsts_sBadSignature 64714
-#define Vcl_Imaging_GIFConsts_sScreenBadColorSize 64715
-#define Vcl_Imaging_GIFConsts_sImageBadColorSize 64716
-#define Vcl_Imaging_GIFConsts_sUnknownExtension 64717
-#define Vcl_Imaging_GIFConsts_sBadExtensionLabel 64718
-#define Vcl_Imaging_GIFConsts_sOutOfMemDIB 64719
+#define AdvMenus_AdvResourceCheckItem 64656
+#define AdvMenus_AdvResourceSubMenuItem 64657
+#define AdvMenus_AdvWinKeyString 64658
+#define AdvChartGDIP_ADVCHARTGDIPERRMSG 64659
+#define Vcl_Imaging_GIFConsts_sInvalidStream 64672
+#define Vcl_Imaging_GIFConsts_sInvalidColor 64673
+#define Vcl_Imaging_GIFConsts_sInvalidBitSize 64674
+#define Vcl_Imaging_GIFConsts_sEmptyColorMap 64675
+#define Vcl_Imaging_GIFConsts_sEmptyImage 64676
+#define Vcl_Imaging_GIFConsts_sMultipleGCE 64677
+#define Vcl_Imaging_GIFConsts_sNoPalette 64678
+#define Vcl_Imaging_GIFConsts_sGIFImageFile 64679
+#define Vcl_Imaging_GIFConsts_sProgressLoading 64680
+#define Vcl_Imaging_GIFConsts_sProgressSaving 64681
+#define Vcl_Imaging_GIFConsts_sProgressConverting 64682
+#define Vcl_Imaging_GIFConsts_sProgressRendering 64683
+#define Vcl_Imaging_GIFConsts_sProgressCopying 64684
+#define Vcl_Imaging_GIFConsts_sProgressOptimizing 64685
+#define AdvMenuUtil_SInvalidPropertyIndex 64686
+#define AdvMenus_AdvResourceRadioItem 64687
+#define Vcl_Imaging_GIFConsts_sOutOfMemDIB 64688
+#define Vcl_Imaging_GIFConsts_sDecodeTooFewBits 64689
+#define Vcl_Imaging_GIFConsts_sDecodeCircular 64690
+#define Vcl_Imaging_GIFConsts_sBadTrailer 64691
+#define Vcl_Imaging_GIFConsts_sBadExtensionInstance 64692
+#define Vcl_Imaging_GIFConsts_sBadBlockSize 64693
+#define Vcl_Imaging_GIFConsts_sBadBlock 64694
+#define Vcl_Imaging_GIFConsts_sUnsupportedClass 64695
+#define Vcl_Imaging_GIFConsts_sInvalidData 64696
+#define Vcl_Imaging_GIFConsts_sBadSize 64697
+#define Vcl_Imaging_GIFConsts_sScreenSizeExceeded 64698
+#define Vcl_Imaging_GIFConsts_sNoColorTable 64699
+#define Vcl_Imaging_GIFConsts_sBadPixelCoordinates 64700
+#define Vcl_Imaging_GIFConsts_sInvalidPixelFormat 64701
+#define Vcl_Imaging_GIFConsts_sBadDimension 64702
+#define Vcl_Imaging_GIFConsts_sNoDIB 64703
+#define Vcl_VDBConsts_SCancelEdit 64704
+#define Vcl_VDBConsts_SRefreshRecord 64705
+#define Vcl_VDBConsts_SApplyUpdates 64706
+#define Vcl_VDBConsts_SCancelUpdates 64707
+#define Vcl_VDBConsts_SDeleteRecordQuestion 64708
+#define Vcl_VDBConsts_SRemoteLogin 64709
+#define Vcl_Imaging_GIFConsts_sOutOfData 64710
+#define Vcl_Imaging_GIFConsts_sTooManyColors 64711
+#define Vcl_Imaging_GIFConsts_sBadColorIndex 64712
+#define Vcl_Imaging_GIFConsts_sBadColorIndexFixed 64713
+#define Vcl_Imaging_GIFConsts_sGIFErrorSaveEmpty 64714
+#define Vcl_Imaging_GIFConsts_sBadSignature 64715
+#define Vcl_Imaging_GIFConsts_sScreenBadColorSize 64716
+#define Vcl_Imaging_GIFConsts_sImageBadColorSize 64717
+#define Vcl_Imaging_GIFConsts_sUnknownExtension 64718
+#define Vcl_Imaging_GIFConsts_sBadExtensionLabel 64719
 #define Vcl_Imaging_pnglang_EPNGCannotChangeTransparentText 64720
 #define Vcl_Imaging_pnglang_EPNGHeaderNotPresentText 64721
 #define Vcl_Imaging_pnglang_EInvalidNewSize 64722
 #define Vcl_Imaging_pnglang_EInvalidSpec 64723
-#define Vcl_Imaging_JConsts_sChangeJPGSize 64724
-#define Vcl_Imaging_JConsts_sJPEGError 64725
-#define Vcl_Imaging_JConsts_sJPEGImageFile 64726
-#define Vcl_VDBConsts_SFirstRecord 64727
-#define Vcl_VDBConsts_SPriorRecord 64728
-#define Vcl_VDBConsts_SNextRecord 64729
-#define Vcl_VDBConsts_SLastRecord 64730
-#define Vcl_VDBConsts_SInsertRecord 64731
-#define Vcl_VDBConsts_SDeleteRecord 64732
-#define Vcl_VDBConsts_SEditRecord 64733
-#define Vcl_VDBConsts_SPostEdit 64734
-#define Vcl_VDBConsts_SCancelEdit 64735
+#define GDIPicture_GDIPERRMSG 64724
+#define Vcl_Imaging_JConsts_sChangeJPGSize 64725
+#define Vcl_Imaging_JConsts_sJPEGError 64726
+#define Vcl_Imaging_JConsts_sJPEGImageFile 64727
+#define Vcl_VDBConsts_SFirstRecord 64728
+#define Vcl_VDBConsts_SPriorRecord 64729
+#define Vcl_VDBConsts_SNextRecord 64730
+#define Vcl_VDBConsts_SLastRecord 64731
+#define Vcl_VDBConsts_SInsertRecord 64732
+#define Vcl_VDBConsts_SDeleteRecord 64733
+#define Vcl_VDBConsts_SEditRecord 64734
+#define Vcl_VDBConsts_SPostEdit 64735
 #define Vcl_Imaging_pnglang_EPNGZLIBErrorText 64736
 #define Vcl_Imaging_pnglang_EPNGInvalidPaletteText 64737
 #define Vcl_Imaging_pnglang_EPNGInvalidFileHeaderText 64738
@@ -876,8 +878,11 @@
 #define System_SysConst_SEndOfFile 65535
 STRINGTABLE
 BEGIN
+	AdvMenus_AdvResourceCheckItem,	L"ADVCHECKITEM"
 	AdvMenus_AdvResourceSubMenuItem,	L"ADVSUBMENUITEM"
 	AdvMenus_AdvWinKeyString,	L"Win+"
+	AdvChartGDIP_ADVCHARTGDIPERRMSG,	L"Could not allocate memory for image"
+	Vcl_Imaging_GIFConsts_sInvalidStream,	L"Invalid stream operation"
 	Vcl_Imaging_GIFConsts_sInvalidColor,	L"Color not in color table"
 	Vcl_Imaging_GIFConsts_sInvalidBitSize,	L"Invalid Bits Per Pixel value"
 	Vcl_Imaging_GIFConsts_sEmptyColorMap,	L"Color table is empty"
@@ -893,7 +898,7 @@ BEGIN
 	Vcl_Imaging_GIFConsts_sProgressOptimizing,	L"Optimizing"
 	AdvMenuUtil_SInvalidPropertyIndex,	L"Invalid property index %d."
 	AdvMenus_AdvResourceRadioItem,	L"ADVRADIOITEM"
-	AdvMenus_AdvResourceCheckItem,	L"ADVCHECKITEM"
+	Vcl_Imaging_GIFConsts_sOutOfMemDIB,	L"Failed to allocate memory for GIF DIB"
 	Vcl_Imaging_GIFConsts_sDecodeTooFewBits,	L"Decoder bit buffer under-run"
 	Vcl_Imaging_GIFConsts_sDecodeCircular,	L"Circular decoder table entry"
 	Vcl_Imaging_GIFConsts_sBadTrailer,	L"Invalid Image trailer"
@@ -909,7 +914,7 @@ BEGIN
 	Vcl_Imaging_GIFConsts_sInvalidPixelFormat,	L"Unsupported PixelFormat"
 	Vcl_Imaging_GIFConsts_sBadDimension,	L"Invalid image dimensions"
 	Vcl_Imaging_GIFConsts_sNoDIB,	L"Image has no DIB"
-	Vcl_Imaging_GIFConsts_sInvalidStream,	L"Invalid stream operation"
+	Vcl_VDBConsts_SCancelEdit,	L"Cancel edit"
 	Vcl_VDBConsts_SRefreshRecord,	L"Refresh data"
 	Vcl_VDBConsts_SApplyUpdates,	L"Apply updates"
 	Vcl_VDBConsts_SCancelUpdates,	L"Cancel updates"
@@ -925,11 +930,11 @@ BEGIN
 	Vcl_Imaging_GIFConsts_sImageBadColorSize,	L"Invalid number of colors specified in Image Descriptor"
 	Vcl_Imaging_GIFConsts_sUnknownExtension,	L"Unknown extension type"
 	Vcl_Imaging_GIFConsts_sBadExtensionLabel,	L"Invalid extension introducer"
-	Vcl_Imaging_GIFConsts_sOutOfMemDIB,	L"Failed to allocate memory for GIF DIB"
 	Vcl_Imaging_pnglang_EPNGCannotChangeTransparentText,	L"Setting bit transparency color is not allowed for png images containing alpha value for each pixel (COLOR_RGBALPHA and COLOR_GRAYSCALEALPHA)"
 	Vcl_Imaging_pnglang_EPNGHeaderNotPresentText,	L"This operation is not valid because the current image contains no valid header."
 	Vcl_Imaging_pnglang_EInvalidNewSize,	L"The new size provided for image resizing is invalid."
 	Vcl_Imaging_pnglang_EInvalidSpec,	L"The \"Portable Network Graphics\" could not be created because invalid image type parameters have being provided."
+	GDIPicture_GDIPERRMSG,	L"Could not allocate memory for image"
 	Vcl_Imaging_JConsts_sChangeJPGSize,	L"Cannot change the size of a JPEG image"
 	Vcl_Imaging_JConsts_sJPEGError,	L"JPEG error #%d"
 	Vcl_Imaging_JConsts_sJPEGImageFile,	L"JPEG Image File"
@@ -941,7 +946,6 @@ BEGIN
 	Vcl_VDBConsts_SDeleteRecord,	L"Delete record"
 	Vcl_VDBConsts_SEditRecord,	L"Edit record"
 	Vcl_VDBConsts_SPostEdit,	L"Post edit"
-	Vcl_VDBConsts_SCancelEdit,	L"Cancel edit"
 	Vcl_Imaging_pnglang_EPNGZLIBErrorText,	L"Could not decompress the image because it contains invalid compressed data.\r\n Description: "
 	Vcl_Imaging_pnglang_EPNGInvalidPaletteText,	L"The \"Portable Network Graphics\" image contains an invalid palette."
 	Vcl_Imaging_pnglang_EPNGInvalidFileHeaderText,	L"The file being read is not a valid \"Portable Network Graphics\" image because it contains an invalid header. This file may be corrupted, try obtaining it again"
@@ -1746,34 +1750,34 @@ END
 
 /* c:\program files (x86)\embarcadero\studio\15.0\lib\Win64\release\Controls.res */
 /* c:\program files (x86)\embarcadero\studio\15.0\lib\Win64\release\Buttons.res */
-/* F:\Mina dokument\Niklas\tmssoftware\TMS Component Pack\ASGSPIN.RES */
-/* F:\Mina dokument\Niklas\tmssoftware\TMS Component Pack\AdvColorPickerDropDown.RES */
-/* F:\Mina dokument\Niklas\tmssoftware\TMS Component Pack\ADVGRID.RES */
-/* F:\Mina dokument\Niklas\tmssoftware\TMS Component Pack\ASGRES.RES */
-/* F:\Mina dokument\Niklas\tmssoftware\TMS Component Pack\ADVMETRO.RES */
-/* F:\Mina dokument\Niklas\tmssoftware\TMS Component Pack\ASGFLTR.RES */
+/* C:\Users\Delat\Documents\tmssoftware\TMS Component Pack\ASGSPIN.RES */
+/* C:\Users\Delat\Documents\tmssoftware\TMS Component Pack\AdvColorPickerDropDown.RES */
+/* C:\Users\Delat\Documents\tmssoftware\TMS Component Pack\ADVGRID.RES */
+/* C:\Users\Delat\Documents\tmssoftware\TMS Component Pack\ASGRES.RES */
+/* C:\Users\Delat\Documents\tmssoftware\TMS Component Pack\ADVMETRO.RES */
+/* C:\Users\Delat\Documents\tmssoftware\TMS Component Pack\ASGFLTR.RES */
 /* c:\program files (x86)\embarcadero\studio\15.0\lib\Win64\release\Vcl.DBLogDlg.dfm */
 /* c:\program files (x86)\embarcadero\studio\15.0\lib\Win64\release\Vcl.DBPWDlg.dfm */
 /* c:\program files (x86)\embarcadero\studio\15.0\lib\Win64\release\DBCtrls.res */
 /* c:\program files (x86)\embarcadero\studio\15.0\lib\Win64\release\ExtDlgs.res */
-/* F:\Mina dokument\Niklas\tmssoftware\TMS Component Pack\AdvGDIPicture.res */
-/* U:\Programvara\PAFgrafik\Data.dfm */
-/* U:\Programvara\PAFgrafik\DatumSelect.dfm */
+/* C:\Users\Delat\Documents\tmssoftware\TMS Component Pack\AdvGDIPicture.res */
+/* C:\Users\astri_000\Documents\GitHub\PAF-Grafik\Data.dfm */
+/* C:\Users\astri_000\Documents\GitHub\PAF-Grafik\DatumSelect.dfm */
 /* c:\program files (x86)\embarcadero\studio\15.0\lib\Win64\release\CategoryButtons.res */
-/* F:\Mina dokument\Niklas\tmssoftware\TMS Component Pack\ADVGLOWBUTTONDB.RES */
-/* F:\Mina dokument\Niklas\tmssoftware\TMS Component Pack\ADVOFFICEPAGER.RES */
-/* F:\Mina dokument\Niklas\tmssoftware\TMS Component Pack\AdvEditGlyphs.res */
-/* F:\Mina dokument\Niklas\tmssoftware\TMS Component Pack\clisted.res */
-/* F:\Mina dokument\Niklas\tmssoftware\TMS Component Pack\colorcombo.res */
-/* F:\Mina dokument\Niklas\tmssoftware\TMS Component Pack\AdvFileNameEdit.RES */
+/* C:\Users\Delat\Documents\tmssoftware\TMS Component Pack\ADVGLOWBUTTONDB.RES */
+/* C:\Users\Delat\Documents\tmssoftware\TMS Component Pack\ADVOFFICEPAGER.RES */
+/* C:\Users\Delat\Documents\tmssoftware\TMS Component Pack\AdvEditGlyphs.res */
+/* C:\Users\Delat\Documents\tmssoftware\TMS Component Pack\clisted.res */
+/* C:\Users\Delat\Documents\tmssoftware\TMS Component Pack\colorcombo.res */
+/* C:\Users\Delat\Documents\tmssoftware\TMS Component Pack\AdvFileNameEdit.RES */
 /* c:\program files (x86)\embarcadero\studio\15.0\lib\Win64\release\FileCtrl.res */
-/* F:\Mina dokument\Niklas\tmssoftware\TMS Component Pack\AdvDirectoryEdit.RES */
-/* U:\Programvara\PAFgrafik\Settings.dfm */
-/* F:\Mina dokument\Niklas\tmssoftware\TMS Component Pack\AdvMenuResources.res */
-/* F:\Mina dokument\Niklas\tmssoftware\TMS Component Pack\CustomizerBtnU.dfm */
-/* F:\Mina dokument\Niklas\tmssoftware\TMS Component Pack\CustomizerU.dfm */
-/* F:\Mina dokument\Niklas\tmssoftware\TMS Component Pack\ADVTOOLBAR.RES */
-/* F:\Mina dokument\Niklas\tmssoftware\TMS Component Pack\ADVTOOLBARDB.RES */
-/* U:\Programvara\PAFgrafik\MainNew.dfm */
-/* U:\Programvara\PAFgrafik\PAFGRAF.res */
-/* U:\Programvara\PAFgrafik\PAFGRAF.drf */
+/* C:\Users\Delat\Documents\tmssoftware\TMS Component Pack\AdvDirectoryEdit.RES */
+/* C:\Users\astri_000\Documents\GitHub\PAF-Grafik\Settings.dfm */
+/* C:\Users\Delat\Documents\tmssoftware\TMS Component Pack\AdvMenuResources.res */
+/* C:\Users\Delat\Documents\tmssoftware\TMS Component Pack\CustomizerBtnU.dfm */
+/* C:\Users\Delat\Documents\tmssoftware\TMS Component Pack\CustomizerU.dfm */
+/* C:\Users\Delat\Documents\tmssoftware\TMS Component Pack\ADVTOOLBAR.RES */
+/* C:\Users\Delat\Documents\tmssoftware\TMS Component Pack\ADVTOOLBARDB.RES */
+/* C:\Users\astri_000\Documents\GitHub\PAF-Grafik\MainNew.dfm */
+/* C:\Users\astri_000\Documents\GitHub\PAF-Grafik\PAFGRAF.res */
+/* C:\Users\astri_000\Documents\GitHub\PAF-Grafik\PAFGRAF.drf */
