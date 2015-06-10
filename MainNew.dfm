@@ -15,13 +15,13 @@ object Mainform: TMainform
   OnResize = FormResize
   PixelsPerInch = 96
   TextHeight = 13
-  object AdvOfficePager1: TAdvOfficePager
+  object Page3: TAdvOfficePager
     Left = 0
     Top = 0
     Width = 888
     Height = 639
     Align = alClient
-    ActivePage = AdvOfficePager11
+    ActivePage = AdvOfficePager12
     ButtonSettings.CloseButtonPicture.Data = {
       424DA20400000000000036040000280000000900000009000000010008000000
       00006C000000C30E0000C30E00000001000000010000427B8400DEEFEF00FFFF
@@ -308,8 +308,6 @@ object Mainform: TMainform
     DoubleBuffered = True
     ShowShortCutHints = False
     TabOrder = 0
-    ExplicitWidth = 1239
-    ExplicitHeight = 856
     NextPictureChanged = False
     PrevPictureChanged = False
     object AdvOfficePager11: TAdvOfficePage
@@ -481,8 +479,6 @@ object Mainform: TMainform
         ShowSplitter = True
         SimplePanel = False
         Version = '1.5.3.2'
-        ExplicitTop = 807
-        ExplicitWidth = 1233
       end
       object ChartDay: TAdvGDIPChartView
         AlignWithMargins = True
@@ -868,8 +864,6 @@ object Mainform: TMainform
         XAxisZoomSensitivity = 1.000000000000000000
         YAxisZoomSensitivity = 1.000000000000000000
         DoubleBuffered = True
-        ExplicitWidth = 1227
-        ExplicitHeight = 799
       end
     end
     object AdvOfficePager12: TAdvOfficePage
@@ -1316,8 +1310,6 @@ object Mainform: TMainform
         XAxisZoomSensitivity = 1.000000000000000000
         YAxisZoomSensitivity = 1.000000000000000000
         DoubleBuffered = True
-        ExplicitWidth = 1227
-        ExplicitHeight = 818
       end
     end
     object AdvOfficePager13: TAdvOfficePage

@@ -23,7 +23,7 @@ uses
 
 type
   TMainform = class(TForm)
-    AdvOfficePager1: TAdvOfficePager;
+    Page3: TAdvOfficePager;
     AdvOfficePager11: TAdvOfficePage;
 
     AdvOfficeStatusBar1: TAdvOfficeStatusBar;
