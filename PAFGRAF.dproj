@@ -1,7 +1,7 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <ProjectGuid>{EFD991A1-D90B-48AC-97E5-ADCD42850E0C}</ProjectGuid>
-        <ProjectVersion>16.0</ProjectVersion>
+        <ProjectVersion>16.1</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
         <MainSource>PAFGRAF.dpr</MainSource>
         <Base>True</Base>
@@ -156,7 +156,6 @@
         </DCCReference>
         <DCCReference Include="Settings.pas">
             <Form>FSettings</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <None Include="ModelSupport_PAFGRAF\default.txaPackage"/>
         <None Include="ModelSupport_PAFGRAF\default.txvpck"/>
@@ -171,8 +170,6 @@
         <None Include="ModelSupport_PAFGRAF\Settings\default.txaPackage"/>
         <None Include="ModelSupport_PAFGRAF\DatumSelect\default.txaPackage"/>
         <None Include="IDEinställningar.txt"/>
-        <None Include=".gitignore.txt"/>
-        <None Include="Licence.txt"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -238,12 +235,6 @@
                 <DeployFile LocalName="Win32\sqlncli.msi" Configuration="Debug" Class="File">
                     <Platform Name="Win32">
                         <RemoteName>sqlncli.msi</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="New1.txt" Configuration="Debug" Class="ProjectFile">
-                    <Platform Name="Win64">
-                        <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>

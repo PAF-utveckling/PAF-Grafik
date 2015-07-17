@@ -4,6 +4,7 @@ interface
 
 uses
   IniFiles,
+  Registry,
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, FireDAC.Stan.Intf, FireDAC.Stan.Option,
@@ -24,23 +25,22 @@ type
     FDQuery1: TFDQuery;
     DataSource1: TDataSource;
     CheckEditLink1: TCheckEditLink;
-    clProdgrupp: TCheckListBox;
-    AdvSmoothButton1: TAdvSmoothButton;
+    ProdList: TCheckListBox;
+    OKBtn: TAdvSmoothButton;
     FDQuery2: TFDQuery;
     DataSource2: TDataSource;
     Splitter1: TSplitter;
-    clRemGrupp: TCheckListBox;
-    DBGridRemGrupp: TDBAdvGrid;
-    DBGridProdGrupp: TDBAdvGrid;
+    RemList: TCheckListBox;
+    RemInfo: TDBAdvGrid;
+    ProdInfo: TDBAdvGrid;
     procedure FormShow(Sender: TObject);
-    procedure AdvSmoothButton1Click(Sender: TObject);
+    procedure OKBtnClick(Sender: TObject);
+    procedure LoadList;
   private
-    { Private declarations }
     procedure WriteToRegistry;
     procedure ReadFromRegistry;
   public
     { Public declarations }
-
   end;
 
 var
@@ -50,127 +50,80 @@ implementation
 
 {$R *.dfm}
 
-procedure TFSettings.AdvSmoothButton1Click(Sender: TObject);
+procedure TFSettings.OKBtnClick(Sender: TObject);
 begin
   WriteToRegistry;
-  Close
+  Close;
 end;
 
 procedure TFSettings.FormShow(Sender: TObject);
-var
-  i: Integer;
 begin
-  // Populera Produktgrupplistan från tabell
-  i := 1;
-  clProdgrupp.Items.Clear;
-  repeat
-    clProdgrupp.Items.Add(DBGRIDProdGrupp.Cells[1, i]);
-    inc(i)
-  until i >= DBGRIDProdGrupp.RowCount;
-  clProdgrupp.Invalidate;
-
-  // Populera Remissgrupplistan från tabell
-  i := 1;
-  clRemGrupp.Items.Clear;
-  repeat
-    clRemGrupp.Items.Add(DBGridRemGrupp.Cells[2, i]);
-    inc(i)
-  until i >= DBGridRemGrupp.RowCount;
-  clRemGrupp.Invalidate;
-
-  ReadFromRegistry
+  LoadList;
+  ReadFromRegistry;
+  Caption := 'Inställningar';
 end;
 
 procedure TFSettings.ReadFromRegistry;
-// Läs aktuella val från listboxar från ini-fil
 var
-  reg: TIniFile;
-  ind, i: Integer;
-  S: String;
-  B: Boolean;
+  reg : TRegIniFile;
+  i : Integer;
+  Bool : Boolean;
 begin
+  reg := TRegIniFile.Create('PAFGRAFIK');
 
-  reg := TIniFile.Create(ChangeFileExt(Application.ExeName, '.INI'));
-
-  // Läs produktgrupp från inifil
-  i := 0;
-  while i < clProdgrupp.Count do
+  for i := 0 to ProdList.Count-1 do
   begin
-    S := clProdgrupp.Items[i];
-    B := reg.ReadBool('ProduktListGrupp', S, true);
-
-    if B then
-      clProdgrupp.State[i] := cbChecked
-    else
-      clProdgrupp.State[i] := cbUnChecked;
-
-    inc(i)
+    Bool := reg.ReadBool('ProdList', ProdList.Items[i], Bool);
+    ProdList.Checked[i] := Bool;
   end;
 
-  // Läs remissgrupp
-  i := 0;
-  while i < clRemGrupp.Count do
+  for i := 0 to RemList.Count-1 do
   begin
-    S := clRemGrupp.Items[i];
-    B := reg.ReadBool('RemListGrupp', S, true);
-
-    if B then
-      clRemGrupp.State[i] := cbChecked
-    else
-      clRemGrupp.State[i] := cbUnChecked;
-
-    inc(i)
+    Bool := reg.ReadBool('RemList', RemList.Items[i], Bool);
+    RemList.Checked[i] := Bool;
   end;
 
-  reg.Free;
+  FSettings.Top := Reg.ReadInteger('SettingsPos', 'Top', Top);
+  FSettings.Left := Reg.ReadInteger('SettingsPos', 'Left', Left);
+  Reg.Free;
 end;
 
 procedure TFSettings.WriteToRegistry;
-// Skriv aktuella val i listboxar till inifil
 var
-  reg: TIniFile;
-  ind, i: Integer;
-  S: String;
-  B: Boolean;
+  reg : TRegIniFile;
+  i : Integer;
+  Bool : Boolean;
 begin
+  reg := TRegIniFile.Create('PAFGRAFIK');
 
-  // produktgrupp till ini-fil
-  reg := TIniFile.Create(ChangeFileExt(Application.ExeName, '.INI'));
-
-  i := 0;
-  while i < clProdgrupp.Count do
+  for i := 0 to ProdList.Count-1 do
   begin
-    S := clProdgrupp.Items[i];
-
-    if clProdgrupp.State[i] = cbChecked then
-      B := true
-    else
-      B := False;
-
-    reg.WriteBool('ProduktListGrupp', S, B);
-
-    inc(i)
+    if ProdList.Checked[i] then Bool := True else Bool := False;
+    reg.WriteBool('ProdList', ProdList.Items[i], Bool);
   end;
 
-  // until i >= clProdgrupp.Count -1;
-
-  // remissgrupp till ini-fil
-  i := 0;
-  while i < clRemGrupp.Count do
+  for i := 0 to RemList.Count-1 do
   begin
-    S := clRemGrupp.Items[i];
-
-    if clRemGrupp.State[i] = cbChecked then
-      B := true
-    else
-      B := False;
-
-    reg.WriteBool('RemListGrupp', S, B);
-
-    inc(i)
+    if RemList.Checked[i] then Bool := True else Bool := False;
+    reg.WriteBool('RemList', RemList.Items[i], Bool);
   end;
 
-  reg.Free;
+  Reg.WriteInteger('SettingsPos', 'Top', Top);
+  Reg.WriteInteger('SettingsPos', 'Left', Left);
+  Reg.Free;
+end;
+
+procedure TFSettings.LoadList;
+var
+  i : Integer;
+begin
+  ProdList.Items.Clear;
+  for i := 1 to ProdInfo.RowCount - 1 do ProdList.Items.Add(ProdInfo.Cells[1, i]);
+  ProdList.Invalidate;
+
+  RemList.Items.Clear;
+  for i := 1 to RemInfo.RowCount - 1 do RemList.Items.Add(RemInfo.Cells[2, i]);
+  RemList.Invalidate;
 end;
 
 end.

@@ -1,7 +1,8 @@
 object FSettings: TFSettings
   Left = 0
   Top = 0
-  Caption = 'FSettings'
+  AutoSize = True
+  Caption = 'Inst'#228'llningar'
   ClientHeight = 567
   ClientWidth = 904
   Color = clBtnFace
@@ -20,7 +21,7 @@ object FSettings: TFSettings
     Width = 904
     Height = 567
     Align = alClient
-    ActivePage = AdvOfficePager13
+    ActivePage = AdvOfficePager12
     ButtonSettings.CloseButtonPicture.Data = {
       424DA20400000000000036040000280000000900000009000000010008000000
       00006C000000C30E0000C30E00000001000000010000427B8400DEEFEF00FFFF
@@ -304,10 +305,9 @@ object FSettings: TFSettings
     ButtonSettings.ScrollButtonFirstHint = 'First'
     ButtonSettings.ScrollButtonLastHint = 'Last'
     ButtonSettings.ClosedListButtonHint = 'Closed Pages'
+    DoubleBuffered = True
     ShowShortCutHints = False
     TabOrder = 0
-    ExplicitLeft = -40
-    ExplicitTop = 72
     NextPictureChanged = False
     PrevPictureChanged = False
     object AdvOfficePager11: TAdvOfficePage
@@ -316,6 +316,7 @@ object FSettings: TFSettings
       Width = 902
       Height = 539
       Caption = 'Dagen'
+      DoubleBuffered = True
       PageAppearance.BorderColor = 14922381
       PageAppearance.Color = 16445929
       PageAppearance.ColorTo = 15587527
@@ -373,7 +374,7 @@ object FSettings: TFSettings
       TabAppearance.BackGround.Direction = gdHorizontal
       Glow = True
       GlowColor = clYellow
-      object clProdgrupp: TCheckListBox
+      object ProdList: TCheckListBox
         Left = 32
         Top = 32
         Width = 289
@@ -384,7 +385,7 @@ object FSettings: TFSettings
           'tv'#229)
         TabOrder = 0
       end
-      object AdvSmoothButton1: TAdvSmoothButton
+      object OKBtn: TAdvSmoothButton
         Left = 752
         Top = 480
         Width = 120
@@ -407,10 +408,10 @@ object FSettings: TFSettings
         Caption = '&OK'
         Color = clSkyBlue
         TabOrder = 1
-        Version = '2.0.2.2'
-        OnClick = AdvSmoothButton1Click
+        Version = '2.0.2.4'
+        OnClick = OKBtnClick
       end
-      object clRemGrupp: TCheckListBox
+      object RemList: TCheckListBox
         Left = 376
         Top = 32
         Width = 289
@@ -428,6 +429,7 @@ object FSettings: TFSettings
       Width = 902
       Height = 539
       Caption = 'DVT'
+      DoubleBuffered = True
       PageAppearance.BorderColor = 14922381
       PageAppearance.Color = 16445929
       PageAppearance.ColorTo = 15587527
@@ -490,6 +492,7 @@ object FSettings: TFSettings
       Width = 902
       Height = 539
       Caption = 'Tableside'
+      DoubleBuffered = True
       PageAppearance.BorderColor = 14922381
       PageAppearance.Color = 16445929
       PageAppearance.ColorTo = 15587527
@@ -553,7 +556,7 @@ object FSettings: TFSettings
         ExplicitTop = 144
         ExplicitHeight = 100
       end
-      object DBGridRemGrupp: TDBAdvGrid
+      object RemInfo: TDBAdvGrid
         Left = 489
         Top = 2
         Width = 487
@@ -661,7 +664,7 @@ object FSettings: TFSettings
         SearchFooter.HintHighlight = 'Highlight occurrences'
         SearchFooter.MatchCaseCaption = 'Match case'
         SortSettings.DefaultFormat = ssAutomatic
-        Version = '2.3.6.24'
+        Version = '2.3.8.1'
         AutoCreateColumns = True
         AutoRemoveColumns = True
         Columns = <
@@ -912,7 +915,7 @@ object FSettings: TFSettings
           64
           64)
       end
-      object DBGRIDProdGrupp: TDBAdvGrid
+      object ProdInfo: TDBAdvGrid
         Left = 2
         Top = 2
         Width = 487
@@ -921,7 +924,7 @@ object FSettings: TFSettings
         Align = alLeft
         ColCount = 3
         DrawingStyle = gdsClassic
-        RowCount = 32
+        RowCount = 34
         FixedRows = 1
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -1020,7 +1023,7 @@ object FSettings: TFSettings
         SearchFooter.HintHighlight = 'Highlight occurrences'
         SearchFooter.MatchCaseCaption = 'Match case'
         SortSettings.DefaultFormat = ssAutomatic
-        Version = '2.3.6.24'
+        Version = '2.3.8.1'
         AutoCreateColumns = True
         AutoRemoveColumns = True
         Columns = <

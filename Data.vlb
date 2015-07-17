@@ -4,13 +4,10 @@ Coordinates=590,10,133,36
 [DBPattab]
 Coordinates=286,10,69,58
 
-[PafConnection]
-Coordinates=357,210,99,36
-
 [InfoBar]
 Coordinates=524,10,56,36
 Visible=True
 
 []
-Coordinates=10,10,150,1642
+Coordinates=357,210,99,36
 

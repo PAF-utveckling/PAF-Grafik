@@ -1,9 +1,11 @@
 object DatumForm: TDatumForm
   Left = 0
   Top = 0
+  BorderIcons = []
+  BorderStyle = bsSingle
   Caption = 'DatumForm'
-  ClientHeight = 87
-  ClientWidth = 189
+  ClientHeight = 97
+  ClientWidth = 199
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -32,7 +34,7 @@ object DatumForm: TDatumForm
     TabOrder = 0
     Text = '2014-10-31'
     Visible = True
-    Version = '2.2.0.2'
+    Version = '2.2.0.3'
     ButtonStyle = bsDropDown
     ButtonWidth = 16
     Etched = False
@@ -281,7 +283,7 @@ object DatumForm: TDatumForm
     Calendar.ShowHint = False
     Date = 41943.000000000000000000
   end
-  object AeroButton1: TAeroButton
+  object OKButton: TAeroButton
     Left = 8
     Top = 54
     Width = 75
@@ -289,9 +291,9 @@ object DatumForm: TDatumForm
     Version = '1.0.0.1'
     Caption = '&OK'
     TabOrder = 1
-    OnClick = AeroButton1Click
+    OnClick = OKButtonClick
   end
-  object AeroButton2: TAeroButton
+  object AvbrytButton: TAeroButton
     Left = 106
     Top = 54
     Width = 75
@@ -299,6 +301,6 @@ object DatumForm: TDatumForm
     Version = '1.0.0.1'
     Caption = '&Avbryt'
     TabOrder = 2
-    OnClick = AeroButton2Click
+    OnClick = AvbrytButtonClick
   end
 end

@@ -9,6 +9,8 @@ uses
   MainNew in 'MainNew.pas' {Mainform},
   Settings in 'Settings.pas' {FSettings};
 
+{FSettings}
+
 {$R *.res}
 
 begin

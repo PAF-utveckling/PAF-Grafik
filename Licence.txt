@@ -1,4 +1,0 @@
-PAF-Grafik
-
-Copyright: Niklas Storck 2015
-

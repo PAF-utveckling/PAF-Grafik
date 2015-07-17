@@ -19,6 +19,9 @@ Coordinates=206,239,61,36
 [DataForm.DataSourcePat]
 Coordinates=0,0,162,146
 
+[AdvOfficePager1]
+Coordinates=10,212,112,36
+
 [DataForm.DataSourceProdgrupp]
 Coordinates=364,1,203,58
 
@@ -42,7 +45,4 @@ Coordinates=132,212,53,36
 
 [DataForm.]
 Coordinates=10,10,164,146
-
-[Page3]
-Coordinates=10,212,112,36
 

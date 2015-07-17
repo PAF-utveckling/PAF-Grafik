@@ -2,8 +2,8 @@ object DataForm: TDataForm
   Left = 0
   Top = 0
   Caption = 'DataForm'
-  ClientHeight = 642
-  ClientWidth = 852
+  ClientHeight = 810
+  ClientWidth = 1150
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,7 +11,6 @@ object DataForm: TDataForm
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  OnActivate = FormActivate
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
@@ -25,11 +24,10 @@ object DataForm: TDataForm
   end
   object DBPattab: TDBAdvGrid
     Left = 0
-    Top = 158
-    Width = 852
+    Top = 326
+    Width = 1150
     Height = 425
     Cursor = crDefault
-    Hint = 'Det h'#228'r '#228'r en hint!'
     Align = alBottom
     ColCount = 8
     DrawingStyle = gdsClassic
@@ -179,7 +177,7 @@ object DataForm: TDataForm
         PrintFont.Height = -11
         PrintFont.Name = 'Tahoma'
         PrintFont.Style = []
-        Width = 100
+        Width = 110
       end
       item
         Borders = []
@@ -204,7 +202,7 @@ object DataForm: TDataForm
         PrintFont.Height = -11
         PrintFont.Name = 'Tahoma'
         PrintFont.Style = []
-        Width = 131
+        Width = 145
       end
       item
         Borders = []
@@ -229,7 +227,7 @@ object DataForm: TDataForm
         PrintFont.Height = -11
         PrintFont.Name = 'Tahoma'
         PrintFont.Style = []
-        Width = 74
+        Width = 82
       end
       item
         Alignment = taRightJustify
@@ -255,7 +253,7 @@ object DataForm: TDataForm
         PrintFont.Height = -11
         PrintFont.Name = 'Tahoma'
         PrintFont.Style = []
-        Width = 34
+        Width = 39
       end
       item
         Borders = []
@@ -281,7 +279,7 @@ object DataForm: TDataForm
         PrintFont.Height = -11
         PrintFont.Name = 'Tahoma'
         PrintFont.Style = []
-        Width = 34
+        Width = 39
       end
       item
         Alignment = taRightJustify
@@ -307,7 +305,7 @@ object DataForm: TDataForm
         PrintFont.Height = -11
         PrintFont.Name = 'Tahoma'
         PrintFont.Style = []
-        Width = 34
+        Width = 39
       end
       item
         Borders = []
@@ -333,7 +331,7 @@ object DataForm: TDataForm
         PrintFont.Height = -11
         PrintFont.Name = 'Tahoma'
         PrintFont.Style = []
-        Width = 96
+        Width = 106
       end>
     DataSource = DataSource1
     PageMode = False
@@ -476,19 +474,19 @@ object DataForm: TDataForm
     ShowUnicode = False
     ColWidths = (
       20
-      100
-      131
-      74
-      34
-      34
-      34
-      96)
+      110
+      145
+      82
+      39
+      39
+      39
+      106)
   end
   object InfoBar: TW7InformationBar
     AlignWithMargins = True
     Left = 3
-    Top = 586
-    Width = 846
+    Top = 754
+    Width = 1144
     Height = 53
     Version = '1.0.2.0'
     object ALableleft: TW7ActiveLabel
@@ -526,39 +524,10 @@ object DataForm: TDataForm
       Font.Style = []
       ParentFont = False
     end
-    object DBAdvNavigator1: TDBAdvNavigator
-      Left = 512
-      Top = 17
-      Width = 240
-      Height = 25
-      AutoThemeAdapt = False
-      DataSource = DataSource1
-      Color = clBtnFace
-      ColorTo = clNone
-      ColorDown = 14210002
-      ColorDownTo = clNone
-      ColorHot = 13289415
-      ColorHotTo = clNone
-      DeleteDisabled = False
-      InsertDisabled = False
-      GlyphSize = gsSmall
-      GlyphCustomSize = 0
-      Orientation = noHorizontal
-      TabOrder = 0
-      Version = '1.3.1.2'
-    end
-  end
-  object PafConnection: TFDConnection
-    Params.Strings = (
-      'ConnectionDef=PAF')
-    Connected = True
-    LoginPrompt = False
-    Left = 97
-    Top = 79
   end
   object FDQuery: TFDQuery
     Active = True
-    Connection = PafConnection
+    Connection = FDConnection1
     SQL.Strings = (
       'SELECT PATTAB.SIGNDATUMTID,'
       '       PATTAB.UNDSLUTDATUMTID,'
@@ -573,16 +542,20 @@ object DataForm: TDataForm
       
         'WHERE  ((PATTAB.UNDSLUTDATUMTID > '#39'2014-10-07'#39')  and (REMTAB.REG' +
         'TID < '#39'2014-10-07'#39'))')
-    Left = 216
-    Top = 80
+    Left = 368
+    Top = 72
   end
   object DataSource1: TDataSource
     DataSet = FDQuery
-    Left = 304
-    Top = 104
+    Left = 488
+    Top = 176
   end
-  object FDPhysOracleDriverLink1: TFDPhysOracleDriverLink
-    Left = 600
-    Top = 88
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'ConnectionDef=PAF')
+    Connected = True
+    LoginPrompt = False
+    Left = 825
+    Top = 162
   end
 end

@@ -1,29 +1,18 @@
 unit MainNew;
-
 { $ define debug}
-
-// ***************************************************
-//
-// Det här är startformen för PAF-Grafik
-// (c) Niklas Storck, 2015
-//
-// ***************************************************
-
 interface
 
 uses
-  Settings,
-  AdvChart,
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs,
+  Settings, AdvChart, Winapi.Windows, Winapi.Messages, System.SysUtils,
+  System.Variants, Vcl.Controls, Vcl.Forms, Vcl.Dialogs,
   FireDAC.UI.Intf, FireDAC.VCLUI.Wait, Vcl.ExtCtrls, Vcl.Menus, AdvMenus,
   FireDAC.Stan.Intf, FireDAC.Comp.UI, AdvChartView, AdvChartViewGDIP,
   AdvOfficeStatusBar, AdvOfficePager, System.Classes,
-  Vcl.Graphics;
+  Vcl.Graphics, Vcl.StdCtrls, Vcl.Samples.Spin, Registry, AdvSmoothCalendar;
 
 type
   TMainform = class(TForm)
-    Page3: TAdvOfficePager;
+    AdvOfficePager1: TAdvOfficePager;
     AdvOfficePager11: TAdvOfficePage;
 
     AdvOfficeStatusBar1: TAdvOfficeStatusBar;
@@ -41,6 +30,11 @@ type
     N1: TMenuItem;
     Instllningar1: TMenuItem;
     ChartDVT: TAdvGDIPChartView;
+    DVTValjSkala: TSpinEdit;
+    SpinEdit4: TSpinEdit;
+    Starttid: TListBox;
+    Undtid: TListBox;
+    Calendar: TAdvSmoothCalendar;
     procedure Timer1Timer(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure FormResize(Sender: TObject);
@@ -48,12 +42,18 @@ type
     procedure Visatableert1Click(Sender: TObject);
     procedure DebugStandarddatum1Click(Sender: TObject);
     procedure Instllningar1Click(Sender: TObject);
+    procedure DVTSkala;
+    procedure DVTValjSkalaChange(Sender: TObject);
+    procedure WriteMain;
+    procedure ReadMain;
+    procedure FormExit(Sender: TObject);
+    procedure CalendarChange(Sender: TObject);
   private
     procedure UpdateDay;
     procedure UpdateDVT;
-    { Private declarations }
   public
-    { Public declarations }
+    DVTMax : Integer;
+    TempDatum : TDateTime;
   end;
 
 var
@@ -73,12 +73,15 @@ end;
 
 procedure TMainform.FormActivate(Sender: TObject);
 begin
+  DVTMax := DVTValjSkala.Value;
+  DVTSkala;
+
+  Application.HintPause := 50;
+  Application.HintHidePause := 30000;
+
   Timer1Timer(Sender);
   Caption := DateToStr(DataForm.Datum);
-  {$ifdef debug}
-  //DataForm.Datum := StrTodate('2014-10-07');
-  //Timer1Timer(Sender)
-  {$endif}
+  ReadMain;
 end;
 
 procedure TMainform.FormResize(Sender: TObject);
@@ -89,111 +92,147 @@ end;
 
 procedure TMainform.Instllningar1Click(Sender: TObject);
 begin
-  // Inställningar för filter etc
   FSettings.ShowModal;
+end;
+
+procedure TMainform.DVTValjSkalaChange(Sender: TObject);
+begin
+  DVTMax := DVTValjSkala.Value;
+  DVTSkala;
+end;
+
+procedure TMainForm.DVTSkala;
+var
+  i : Integer;
+begin  
+  ChartDVT.BeginUpdate;
+  for i := 0 to 2 do
+  ChartDVT.Panes[0].Series[i].Maximum := DVTMax; 
+  ChartDVT.EndUpdate;
 end;
 
 procedure TMainform.Visatableert1Click(Sender: TObject);
 begin
-  DataForm.Show
+  DataForm.Show;
 end;
 
 procedure TMainform.UpdateDay;
 var
   i: Integer;
 begin
-
   Caption := DateToStr(DataForm.Datum);
   ChartDay.beginupdate;
   ChartDay.ClearPaneSeries;
   for i := 0 to 23 do
   begin
-    ChartDay.Panes[0].Series[2].AddSingleXYPoint(i,
-      DataForm.DayGrafArray[i].SignSum);
-    ChartDay.Panes[0].Series[1].AddSingleXYPoint(i,
-      DataForm.DayGrafArray[i].Remsum);
-    ChartDay.Panes[0].Series[0].AddSingleXYPoint(i,
-      DataForm.DayGrafArray[i].UsSum);
+    ChartDay.Panes[0].Series[2].AddSingleXYPoint(i,DataForm.DayGrafArray[i].SignSum);
+    ChartDay.Panes[0].Series[1].AddSingleXYPoint(i,DataForm.DayGrafArray[i].Remsum);
+    ChartDay.Panes[0].Series[0].AddSingleXYPoint(i,DataForm.DayGrafArray[i].UsSum);
   end;
-  ChartDay.Panes[0].Series[1].LineColor := RGB(255, 50, 50);
-  ChartDay.Panes[0].Series[1].LineWidth := 3;
-  ChartDay.Panes[0].Series[1].legendtext := 'Remisser / timme';
-  ChartDay.Panes[0].Series[1].ChartType := ctBar;
-  ChartDay.Panes[0].Series[1].Color := clYellow;
-  ChartDay.Panes[0].Series[2].LineColor := RGB(120, 25, 27);
-  ChartDay.Panes[0].Series[2].LineWidth := 3;
-  ChartDay.Panes[0].Series[2].legendtext := 'Signerade undersökningar / timme';
-  ChartDay.Panes[0].Series[2].ChartType := ctLine;
-  ChartDay.Panes[0].Series[2].Color := RGB(255, 200, 120);
-  ChartDay.Panes[0].Series[0].ChartType := ctBar;
-  ChartDay.Panes[0].Series[0].legendtext := 'Utförda undersökningar / timme';
-  ChartDay.Panes[0].Series[0].Color := clGreen;
   ChartDay.Panes[0].Range.RangeTo := 19;
   ChartDay.Panes[0].Range.Rangefrom := 7;
-
   for i := 0 to 2 do
   begin
-    ChartDay.Panes[0].Series[i].Minimum := -1;
     ChartDay.Panes[0].Series[i].Maximum := 20;
+    ChartDay.Panes[0].Series[i].Minimum := -1;
   end;
   ChartDay.Endupdate;
 end;
 
 procedure TMainform.UpdateDVT;
 var
-  R:TRect;
-  TStart,TEnd: Real;
-  i: Integer;
-  C: TColor;
-
+  R : TRect;
+  i, Minutes, Hours : Integer;
+  tid : Double;
+  Reg : String;
 begin
   ChartDVT.beginupdate;
   ChartDVT.ClearPaneSeries;
-
-  ChartDVT.Panes[0].Series[0].Color := clBlue;
-  ChartDVT.Panes[0].Series[0].ChartType := ctBar;
-  ChartDVT.Panes[0].Series[0].legendtext := 'Tid från remiss till svar DVT';
-  ChartDVT.Panes[0].Series[0].Color := clBlue;
-
-  R.Left:=0; //ChartDVT.Left;
-  R.Right:=ChartDVT.Width; // -R.Left;
-
-  for i := 0 to Length(DataForm.DVTGrafArray) do
-  begin
-
-    // if Dataform.DVTGrafArray[i].RegTid > 0 then
-    // begin
-    if DataForm.DVTGrafArray[i].LedDagar > 0 then
-      C := clRed
-    else
-      C := clGreen;
-
-    ChartDVT.Panes[0].Series[0].AddSingleXYPoint
-      (DataForm.DVTGrafArray[i].RegTid, DataForm.DVTGrafArray[i].LedTimmar +
-      DataForm.DVTGrafArray[i].LedMinuter / 60, C);
-
-    // end;
-  end;
-  ChartDVT.Endupdate
+  Starttid.Clear;
+  Undtid.Clear;
+  i := 0;
+  repeat
+    Hours := DataForm.DVTGrafArray[i].LedTimmar;
+    Minutes := DataForm.DVTGrafArray[i].LedMinuter;
+    tid := Hours + Minutes/60;
+    Reg := DateTimeToStr(DataForm.DVTGrafArray[i].RegTid);
+    Reg := Reg.Substring(11,8);
+    ChartDVT.Panes[0].Series[0].AddSinglePoint(DataForm.DVTGrafArray[i].LedTimmar+DataForm.DVTGrafArray[i].LedMinuter/60, Reg);
+    if DataForm.DVTGrafArray[i].LedDagar > 0 then ChartDVT.Panes[0].Series[1].AddSinglePoint(DataForm.DVTGrafArray[i].LedTimmar+DataForm.DVTGrafArray[i].LedMinuter/60,Reg)
+    else ChartDVT.Panes[0].Series[1].AddSinglePoint(0,Reg);
+    inc(i);
+    ChartDVT.Panes[0].Range.RangeTo := i-2;
+    if tid <> 0 then
+    begin
+      Starttid.Items.Add(Reg);
+      if Minutes<10 then Undtid.Items.Add(' ' + IntToStr(Hours) + ':0' + IntToStr(Minutes))
+      else Undtid.Items.Add(' ' + IntToStr(Hours) + ':' + IntToStr(Minutes));
+    end;
+  until tid = 0;
+  i:=i-1;
+  Starttid.Height :=  2 + i*19;
+  Undtid.Height := 2 + i*19;
+  ChartDVT.Endupdate;
 end;
 
 procedure TMainform.Vljdata1Click(Sender: TObject);
 begin
+  DatumForm.TempDatum := DataForm.Datum;
+  //Calendar.Top := 15;
+  //Calendar.Left := 60;
+  //Calendar.Visible := True;
+  //Calendar.SelectDate := StrToDate(Caption);
+  //Calendar.SelectedDate := StrToDate(Caption);
 
-  Datumform.TempDatum := DataForm.Datum;
   Datumform.ShowModal;
-  DataForm.Datum := Datumform.TempDatum;
+
+  DataForm.Datum := DatumForm.TempDatum;
 
   DataForm.Update;
   UpdateDay;
-  UpdateDVT
+  UpdateDVT;
+end;
+
+procedure TMainform.CalendarChange(Sender: TObject);
+begin
+  TempDatum := Calendar.SelectedDate;
+  DataForm.Datum := TempDatum;
 end;
 
 procedure TMainform.Timer1Timer(Sender: TObject);
 begin
   DataForm.Update;
   UpdateDay;
-  UpdateDVT
+  UpdateDVT;
+end;
+
+procedure TMainForm.WriteMain;
+var
+  Reg : TRegIniFile;
+begin
+  Reg := TRegIniFile.Create('PAFGRAFIK');
+  Reg.WriteInteger('MainNew', 'Top', Top);
+  Reg.WriteInteger('MainNew', 'Left', Left);
+  Reg.WriteInteger('MainNew', 'Width', Width);        // Sparar applikationsstorleken
+  Reg.WriteInteger('MainNew', 'Height', Height);
+  Reg.Free;
+end;
+
+procedure TMainForm.ReadMain;
+var
+  Reg : TRegIniFile;
+begin
+  Reg := TRegIniFile.Create('PAFGRAFIK');
+  MainForm.Top := Reg.ReadInteger('MainNew', 'Top', Top);
+  MainForm.Left := Reg.ReadInteger('MainNew', 'Left', Left);
+  MainForm.Width := Reg.ReadInteger('MainNew', 'Width', Width);         // Läser in applikationsstorleken
+  MainForm.Height := Reg.ReadInteger('MainNew', 'Height', Height);
+  Reg.Free;
+end;
+
+procedure TMainForm.FormExit(Sender: TObject);
+begin
+  WriteMain;
 end;
 
 end.
